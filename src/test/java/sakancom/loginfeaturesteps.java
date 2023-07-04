@@ -3,39 +3,24 @@ package sakancom;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import static org.junit.Assert.assertTrue;
 
 public class loginfeaturesteps {
 
-    @Given("that the user is not logged in")
-    public void that_the_user_is_not_logged_in() {
+    @Given("you are in login page")
+    public void you_are_in_login_page() {
         // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+        throw new io.cucumber.java.PendingException();
     }
-    @When("the user  enter email {string}")
-    public void the_user_enter_email(String string) {
+    @When("I type in email {string} And I type in password {string}")
+    public void i_type_in_email_and_i_type_in_password(String string, String string2) {
         // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+        throw new io.cucumber.java.PendingException();
     }
-    @When("the enter password {string}")
-    public void the_enter_password(String string) {
+    @Then("I should see Access your account")
+    public void i_should_see_access_your_account() {
         // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+        throw new io.cucumber.java.PendingException();
     }
-    @When("the rul is {string}")
-    public void the_rul_is(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
-    }
-    @Then("the message will be display {string}")
-    public void the_message_will_be_display(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
-    }
-    @Then("the user move to the {string}")
-    public void the_user_move_to_the(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
-    }
+
 }
