@@ -1,10 +1,27 @@
-Feature: Admin login
-  Description: the admin log in to the system
-  Actor: Admin
+Feature: Login in my program
+  @scenario1
+  Scenario Outline: Wrong username or password
+    Given you are in login page
+    When I type in email "<username>" And I type in password "<password>"
+    Then I should see E-mail or password is incorrect
+    Examples:
+      | username | password |
+      | C1       | 112233   |
 
+  @scenario2
+  Scenario Outline: Login successfully
+    Given you are in login page
+    When I type in email "<username>" And I type in password "<password>"
+    Then I should see Access your account
+    Examples:
+      | username | password |
+      | C1       | 123456   |
 
-  Scenario: Admin can login to system
-    Given the Admin is not logged in to the system
-    And  the password is equal to "1234"
-    Then the Admin should log in succeed
-    And the the Admin log to the system
+  @scenario3
+  Scenario Outline: Login successfully
+    Given you are in login page
+    When I type in email "<username>" And I type in password "<password>"
+    Then Empty password or username
+    Examples:
+      | username | password |
+      |          | 777      |

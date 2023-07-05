@@ -3,34 +3,39 @@ package sakancom;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import static org.junit.Assert.assertTrue;
 
 public class loginfeaturesteps {
 
-   MyApp obj;
-    @Given("the Admin is not logged in to the system")
-    public void the_admin_is_not_logged_in_to_the_system() {
+    @Given("you are in login page")
+    public void you_are_in_login_page() {
         // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
-       obj.flag = false;
+        //   throw new io.cucumber.java.PendingException();
+    }
+    @When("I type in email {string} And I type in password {string}")
+    public void i_type_in_email_and_i_type_in_password(String string, String string2) {
+        // Write code here that turns the phrase above into concrete actions
+        //  throw new io.cucumber.java.PendingException();
+    }
+    @Then("I should see E-mail or password is incorrect")
+    public void iShouldSeeEMailOrPasswordIsIncorrect() {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
     }
 
-    @Given("the password is equal to {string}")
-    public void the_password_is_equal_to(String string) {
+    @Then("I should see Access your account")
+    public void i_should_see_access_your_account() {
         // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
+        // throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the Admin should log in succeed")
-    public void the_admin_should_log_in_succeed() {
+    @Then("Empty password or username")
+    public void emptyPasswordOrUsername() {
         // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the the Admin log to the system")
-    public void the_the_admin_log_to_the_system() {
-        // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
-    }
+
+
+
 }
