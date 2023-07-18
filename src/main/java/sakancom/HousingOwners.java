@@ -1,26 +1,34 @@
 package sakancom;
 
 public class HousingOwners {
-    private String password ;
+   /* private String password ;
     private String email;
     private boolean flagIfLogIn;
-    //information connect
-    private String phone;
+    private String PhoneNumber;
     private String address;
     private String name;
-    private int id;
+    private int id;*/
+    private HousingOwners owner;
+    public HousingOwners() {
 
-    public HousingOwners(String password, String email, boolean flagIfLogIn, String phone, String address, String name, int id) {
-        this.password = password;
+        /*this.password = password;
         this.email = email;
         this.flagIfLogIn = flagIfLogIn;
-        this.phone = phone;
+        this.PhoneNumber = PhoneNumber;
         this.address = address;
         this.name = name;
-        this.id = id;
+        this.id = id;*/
+        this.owner=owner;
     }
 
-    public String getEmail() {
+    public HousingOwners getOwner(){
+        return owner;
+    }
+
+    public void setOwner(HousingOwners owner) {
+        this.owner = owner;
+    }
+    /*public String getEmail() {
         return email;
     }
     public String getPassword() {
@@ -32,7 +40,7 @@ public class HousingOwners {
     }
 
     public String getPhone() {
-        return phone;
+        return PhoneNumber;
     }
 
     public String getAddress() {
@@ -45,6 +53,9 @@ public class HousingOwners {
 
     public int getId() {
         return id;
+    }*/
+
+    public void ownerpage() {
     }
 }
 

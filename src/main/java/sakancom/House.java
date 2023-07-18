@@ -2,6 +2,9 @@ package sakancom;
 
 import java.util.List;
 
+// comment for test
+
+
 public class House {
    private int id;
    private String address;

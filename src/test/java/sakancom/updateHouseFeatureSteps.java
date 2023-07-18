@@ -10,8 +10,8 @@ public class updateHouseFeatureSteps {
         // Write code here that turns the phrase above into concrete actions
      //   throw new io.cucumber.java.PendingException();
     }
-    @When("the admin want to change the rent of the House to {double}")
-    public void theAdminWantToChangeTheRentOfTheHouseTo(Double double1) {
+    @When("the owner want to change the rent of the House to {double}")
+    public void theownerWantToChangeTheRentOfTheHouseTo(Double double1) {
         // Write code here that turns the phrase above into concrete actions
    //     throw new io.cucumber.java.PendingException();
     }
@@ -28,8 +28,8 @@ public class updateHouseFeatureSteps {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }
-    @When("the admin want to change the availability of the House to false")
-    public void theAdminWantToChangeTheAvailabilityOfTheHouseToFalse() {
+    @When("the owner want to change the availability of the House to false")
+    public void theownerWantToChangeTheAvailabilityOfTheHouseToFalse() {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }
@@ -41,8 +41,8 @@ public class updateHouseFeatureSteps {
 
 
 
-    @Given("that the administrator is log in")
-    public void thatTheAdministratorIsLogIn() {
+    @Given("that the owner is log in")
+    public void thatTheownerIsLogIn() {
         // Write code here that turns the phrase above into concrete actions
      //   throw new io.cucumber.java.PendingException();
     }
@@ -51,8 +51,8 @@ public class updateHouseFeatureSteps {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }
-    @When("the admin want to change the tenantData of the House as table:")
-    public void theAdminWantToChangeTheTenantDataOfTheHouseAsTable(io.cucumber.datatable.DataTable dataTable) {
+    @When("the owner want to change the tenantData of the House as table:")
+    public void theownerWantToChangeTheTenantDataOfTheHouseAsTable(io.cucumber.datatable.DataTable dataTable) {
         // Write code here that turns the phrase above into concrete actions
         // For automatic transformation, change DataTable to one of
         // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
@@ -70,18 +70,18 @@ public class updateHouseFeatureSteps {
 
 
 
-    @Given("that the administrator is in system")
-    public void thatTheAdministratorIsInSystem() {
+    @Given("that the owner is in system")
+    public void thatTheownerIsInSystem() {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }
-    @Given("the admin want to update house with id {int}")
-    public void theAdminWantToUpdateHouseWithId(Integer int1) {
+    @Given("the owner want to update house with id {int}")
+    public void theownerWantToUpdateHouseWithId(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
       //  throw new io.cucumber.java.PendingException();
     }
-    @When("the admin want to update the rent of the House to be {double}")
-    public void theAdminWantToUpdateTheRentOfTheHouseToBe(Double double1) {
+    @When("the owner want to update the rent of the House to be {double}")
+    public void theownerWantToUpdateTheRentOfTheHouseToBe(Double double1) {
         // Write code here that turns the phrase above into concrete actions
       //  throw new io.cucumber.java.PendingException();
     }
@@ -92,18 +92,18 @@ public class updateHouseFeatureSteps {
     }
 
 
-    @Given("that the administrator is log in successfully")
-    public void thatTheAdministratorIsLogInSuccessfully() {
+    @Given("that the owner is log in successfully")
+    public void thatTheownerIsLogInSuccessfully() {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }
-    @Given("the admin want to update house with id equal {int}")
-    public void theAdminWantToUpdateHouseWithIdEqual(Integer int1) {
+    @Given("the owner want to update house with id equal {int}")
+    public void theownerWantToUpdateHouseWithIdEqual(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }
-    @When("the admin want to update the availability of the House to be false")
-    public void theAdminWantToUpdateTheAvailabilityOfTheHouseToBeFalse() {
+    @When("the owner want to update the availability of the House to be false")
+    public void theownerWantToUpdateTheAvailabilityOfTheHouseToBeFalse() {
         // Write code here that turns the phrase above into concrete actions
    //     throw new io.cucumber.java.PendingException();
     }
@@ -115,18 +115,18 @@ public class updateHouseFeatureSteps {
 
 
 
-    @Given("that the administrator is logged in the system successfully")
-    public void thatTheAdministratorIsLoggedInTheSystemSuccessfully() {
+    @Given("that the owner is logged in the system successfully")
+    public void thatTheownerIsLoggedInTheSystemSuccessfully() {
         // Write code here that turns the phrase above into concrete actions
      //   throw new io.cucumber.java.PendingException();
     }
-    @Given("there is a House the admin want to update  with id  {int}")
-    public void thereIsAHouseTheAdminWantToUpdateWithId(Integer int1) {
+    @Given("there is a House the owner want to update  with id  {int}")
+    public void thereIsAHouseTheownerWantToUpdateWithId(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
       //  throw new io.cucumber.java.PendingException();
     }
-    @When("the admin want to change the tenantData of the House to ba as the table shows")
-    public void theAdminWantToChangeTheTenantDataOfTheHouseToBaAsTheTableShows(io.cucumber.datatable.DataTable dataTable) {
+    @When("the owner want to change the tenantData of the House to ba as the table shows")
+    public void theownerWantToChangeTheTenantDataOfTheHouseToBaAsTheTableShows(io.cucumber.datatable.DataTable dataTable) {
         // Write code here that turns the phrase above into concrete actions
         // For automatic transformation, change DataTable to one of
         // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
@@ -136,8 +136,8 @@ public class updateHouseFeatureSteps {
         // For other transformations you can register a DataTableType.
       //  throw new io.cucumber.java.PendingException();
     }
-    @Then("the update can't complete and the error message will appear to admin")
-    public void theUpdateCanTCompleteAndTheErrorMessageWillAppearToAdmin() {
+    @Then("the update can't complete and the error message will appear to owner")
+    public void theUpdateCanTCompleteAndTheErrorMessageWillAppearToowner() {
         // Write code here that turns the phrase above into concrete actions
     //    throw new io.cucumber.java.PendingException();
     }

@@ -5,7 +5,7 @@ public class Admin {
     private String email;
     boolean flagIfLogIn;
 
-    public Admin(String email,String password) {
+    public Admin() {
         this.email = email;
         this.password=password;
     }
@@ -16,4 +16,6 @@ public class Admin {
         return password;
     }
 
+    public void adminPage() {
+    }
 }

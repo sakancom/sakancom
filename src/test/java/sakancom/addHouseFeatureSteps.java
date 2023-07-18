@@ -7,7 +7,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class addHouseFeatureSteps {
 
- @Given("that the administrator is logged in the system")
+ @Given("that the owner is logged in the system")
  public void thatTheAdministratorIsLoggedInTheSystem() {
   // Write code here that turns the phrase above into concrete actions
  // throw new io.cucumber.java.PendingException();
@@ -24,14 +24,12 @@ public class addHouseFeatureSteps {
  // throw new io.cucumber.java.PendingException();
   assertTrue(true);
  }
- @Then("the house will be saved in the  house list with isAvailable state true and the add will be successful")
+ @Then("the house will be saved in the  house list requests and the add will be successful")
  public void theHouseWillBeSavedInTheHouseListWithIsAvailableStateTrueAndTheAddWillBeSuccessful() {
   // Write code here that turns the phrase above into concrete actions
  // throw new io.cucumber.java.PendingException();
  }
-
-
- @Given("that the administrator is logged in")
+ @Given("that the owner is logged in")
  public void thatTheAdministratorIsLoggedIn() {
   // Write code here that turns the phrase above into concrete actions
  // throw new io.cucumber.java.PendingException();
@@ -41,9 +39,9 @@ public class addHouseFeatureSteps {
   // Write code here that turns the phrase above into concrete actions
   //throw new io.cucumber.java.PendingException();
  }
- @Then("the house will not be saves and error message will appear")
- public void theHouseWillNotBeSavesAndErrorMessageWillAppear() {
+ @Then("the house will not be saved and error message will appear")
+ public void the_house_will_not_be_saved_and_error_message_will_appear() {
   // Write code here that turns the phrase above into concrete actions
- // throw new io.cucumber.java.PendingException();
+  //throw new io.cucumber.java.PendingException();
  }
 }
