@@ -1,16 +1,21 @@
-package sakancom;
+package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import sakancom.serveses.LoginToMyAppAsAdmin;
 
 import static junit.framework.TestCase.assertTrue;
 
 public class addHouseFeatureSteps {
-
+ LoginToMyAppAsAdmin myApp;
+ String password,email;
+ public addHouseFeatureSteps()
+ {
+  myApp = new LoginToMyAppAsAdmin();
+ }
  @Given("that the administrator is logged in the system")
  public void thatTheAdministratorIsLoggedInTheSystem() {
-  // Write code here that turns the phrase above into concrete actions
- // throw new io.cucumber.java.PendingException();
+  assertTrue(myApp.isLoggedIn());
  }
  @Given("there is a House with the following details:")
  public void thereIsAHouseWithTheFollowingDetails(io.cucumber.datatable.DataTable dataTable) {

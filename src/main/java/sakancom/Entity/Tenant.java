@@ -1,25 +1,25 @@
-package sakancom;
+package sakancom.Entity;
 
-public class HousingOwners {
+public class Tenant {
     private String password ;
     private String email;
-    private boolean flagIfLogIn;
-    //information connect
     private String phone;
     private String address;
     private String name;
     private int id;
+    private int age;
+    private String universityMajors;
 
-    public HousingOwners(String password, String email, boolean flagIfLogIn, String phone, String address, String name, int id) {
-        this.password = password;
+    public Tenant(String email, String password,  String phone, String address, String name, int id, int age, String universityMajors) {
         this.email = email;
-        this.flagIfLogIn = flagIfLogIn;
+        this.password=password;
         this.phone = phone;
         this.address = address;
         this.name = name;
         this.id = id;
+        this.age = age;
+        this.universityMajors = universityMajors;
     }
-
     public String getEmail() {
         return email;
     }
@@ -27,9 +27,7 @@ public class HousingOwners {
         return password;
     }
 
-    public boolean isFlagIfLogIn() {
-        return flagIfLogIn;
-    }
+
 
     public String getPhone() {
         return phone;
@@ -46,5 +44,12 @@ public class HousingOwners {
     public int getId() {
         return id;
     }
-}
 
+    public int getAge() {
+        return age;
+    }
+
+    public String getUniversityMajors() {
+        return universityMajors;
+    }
+}

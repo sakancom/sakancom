@@ -1,5 +1,6 @@
-package sakancom;
+package sakancom.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class House {
@@ -25,7 +26,7 @@ public class House {
       this.area = area;
       this.rent = rent;
       this.location = location;
-      this.services = services;
+      this.services = new ArrayList<>(services);
       this.isAvailable = isAvailable;
       this.owner = owner;
       this.tenantData = tenantData;
