@@ -1,9 +1,8 @@
-package sakancom;
+package sakancom.Entity;
 
 public class Tenant {
     private String password ;
     private String email;
-    private boolean flagIfLogIn;
     private String phone;
     private String address;
     private String name;
@@ -11,10 +10,9 @@ public class Tenant {
     private int age;
     private String universityMajors;
 
-    public Tenant(String email, String password, boolean flagIfLogIn, String phone, String address, String name, int id, int age, String universityMajors) {
+    public Tenant(String email, String password,  String phone, String address, String name, int id, int age, String universityMajors) {
         this.email = email;
         this.password=password;
-        this.flagIfLogIn = flagIfLogIn;
         this.phone = phone;
         this.address = address;
         this.name = name;
@@ -29,9 +27,7 @@ public class Tenant {
         return password;
     }
 
-    public boolean isFlagIfLogIn() {
-        return flagIfLogIn;
-    }
+
 
     public String getPhone() {
         return phone;

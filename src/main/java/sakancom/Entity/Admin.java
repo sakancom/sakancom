@@ -1,9 +1,8 @@
-package sakancom;
+package sakancom.Entity;
 
 public class Admin {
     private String password ;
     private String email;
-    boolean flagIfLogIn;
 
     public Admin() {
         this.email = email;

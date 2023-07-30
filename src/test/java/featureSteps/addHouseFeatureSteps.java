@@ -1,16 +1,21 @@
-package sakancom;
+package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import sakancom.serveses.LoginToMyAppAsAdmin;
 
 import static junit.framework.TestCase.assertTrue;
 
 public class addHouseFeatureSteps {
-
- @Given("that the owner is logged in the system")
+ LoginToMyAppAsAdmin myApp;
+ String password,email;
+ public addHouseFeatureSteps()
+ {
+  myApp = new LoginToMyAppAsAdmin();
+ }
+ @Given("that the administrator is logged in the system")
  public void thatTheAdministratorIsLoggedInTheSystem() {
-  // Write code here that turns the phrase above into concrete actions
- // throw new io.cucumber.java.PendingException();
+  assertTrue(myApp.isLoggedIn());
  }
  @Given("there is a House with the following details:")
  public void thereIsAHouseWithTheFollowingDetails(io.cucumber.datatable.DataTable dataTable) {
@@ -24,12 +29,14 @@ public class addHouseFeatureSteps {
  // throw new io.cucumber.java.PendingException();
   assertTrue(true);
  }
- @Then("the house will be saved in the  house list requests and the add will be successful")
+ @Then("the house will be saved in the  house list with isAvailable state true and the add will be successful")
  public void theHouseWillBeSavedInTheHouseListWithIsAvailableStateTrueAndTheAddWillBeSuccessful() {
   // Write code here that turns the phrase above into concrete actions
  // throw new io.cucumber.java.PendingException();
  }
- @Given("that the owner is logged in")
+
+
+ @Given("that the administrator is logged in")
  public void thatTheAdministratorIsLoggedIn() {
   // Write code here that turns the phrase above into concrete actions
  // throw new io.cucumber.java.PendingException();
@@ -39,9 +46,9 @@ public class addHouseFeatureSteps {
   // Write code here that turns the phrase above into concrete actions
   //throw new io.cucumber.java.PendingException();
  }
- @Then("the house will not be saved and error message will appear")
- public void the_house_will_not_be_saved_and_error_message_will_appear() {
+ @Then("the house will not be saves and error message will appear")
+ public void theHouseWillNotBeSavesAndErrorMessageWillAppear() {
   // Write code here that turns the phrase above into concrete actions
-  //throw new io.cucumber.java.PendingException();
+ // throw new io.cucumber.java.PendingException();
  }
 }
