@@ -1,6 +1,7 @@
 package sakancom.Database;
 
 import sakancom.Entity.House;
+import sakancom.serveses.AppLogger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,10 @@ public class RequestToAddHouseDB {
     public static void addHouse(House h) {
         houses.add(h);
     }
-
+//    static{
+//        AppLogger.setLevel(logger);
+//        houses.add(new House(1, "Nablus", 4, 2, 200, 1000, "Nablus",  new ArrayList<>(List.of("Wifi", " Parking", "Garden")),true,null,  new ArrayList<>(),true, "every month"));
+//    }
     public static List<House> getHouses() {
         return houses;
     }
@@ -30,5 +34,8 @@ public class RequestToAddHouseDB {
             displayHouse(h);
         }
 
+    }
+    public static void clearTheRequestList(){
+        houses.clear();
     }
 }

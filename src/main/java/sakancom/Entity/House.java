@@ -3,6 +3,9 @@ package sakancom.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
+// comment for test
+
+
 public class House {
    private int id;
    private String address;

@@ -11,11 +11,12 @@ public class signupfeaturesteps {
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();
     }
-    @When("you write the {string}, {string}, {string}, {string}, {string}, {string}, {string} and {string}")
-    public void you_write_the_and(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8) {
+    @When("you write the {string}, {string}, {string}, {string}, {string}, {string}, {string},{string} and {string}")
+    public void youWriteTheAnd(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9) {
         // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+       // throw new io.cucumber.java.PendingException();
     }
+
     @Then("you should show please fill all informations")
     public void you_should_show_please_fill_all_informations() {
         // Write code here that turns the phrase above into concrete actions

@@ -10,8 +10,7 @@ public class AddHouseToMyAppAsOwner {
     private static final Logger logger = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
 
 
-    public static void addHouseToRequestList(House h){
+    public static void addHouseToRequestList(House h) {
         addHouse(h);
     }
-
 }
