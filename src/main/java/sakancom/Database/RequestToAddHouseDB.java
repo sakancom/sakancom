@@ -14,8 +14,8 @@ public class RequestToAddHouseDB {
         throw new IllegalStateException("Utility class");
     }
 
-    public static void addHouse() {
-        houses.add(new House(2, "Nablus", 4, 2, 200, 1000, "Nablus",  new ArrayList<>(List.of("Wifi", " Parking", "Garden")),true,null,  new ArrayList<>(),true, "every month"));
+    public static void addHouse(House h) {
+        houses.add(h);
     }
 
     public static List<House> getHouses() {

@@ -11,8 +11,8 @@ public class AdminDB {
         throw new IllegalStateException("Utility class");
     }
     static{
-        admins.add(new Admin("farah","123456"));
         admins.add(new Admin("alaa","true Pass"));
+        admins.add(new Admin("farah","002"));
         admins.add(new Admin("jana","JaNa"));
         admins.add(new Admin("lemara","lemo"));
     }

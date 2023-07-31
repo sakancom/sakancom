@@ -17,13 +17,10 @@ public class loginFeatureSteps {
                 myApp = new LoginToMyAppAsAdmin();
         }
 
-
-
         @Given("you are in login page")
         public void youAreInLoginPage() {
                 assertFalse(myApp.isLoggedIn());
         }
-
 
         @When("I type in email {string} And I type in password {string}")
         public void iTypeInEmailAndITypeInPassword(String email, String password) {
@@ -34,8 +31,6 @@ public class loginFeatureSteps {
         public void iShouldSeeEMailOrPasswordIsIncorrect() {
           myApp.errorInLogin();
         }
-
-
 
         @Then("I should see Access your account")
         public void iShouldSeeAccessYourAccount() {
