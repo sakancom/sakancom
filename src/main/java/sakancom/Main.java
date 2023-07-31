@@ -6,44 +6,35 @@ package sakancom;
         import java.util.logging.*;
 
 public class Main {
-    // importing the File class
-
     static Logger logger = Logger.getLogger(Main.class.getName());
-    // Remove the default handler to disable the default logging behavior
 
     public static void menu(){
         logger.setUseParentHandlers(false);
-
-        // Create a custom formatter without the date
         Formatter formatter = new Formatter() {
             @Override
             public String format(LogRecord record) {
                 return record.getMessage();
             }
         };
-
-        // Create a new console handler and set the custom formatter
         ConsoleHandler consoleHandler = new ConsoleHandler();
         consoleHandler.setFormatter(formatter);
-
-        // Add the console handler to the logger
         logger.addHandler(consoleHandler);
 
-        // Log a message using the logger
-        logger.info("____________________________________________________\n");
-        logger.info("| Welcome to Sakancom Services System              |\n");
-        logger.info("| If you want to login as an admin enter number 1  |\n");
-        logger.info("| If you want to login as an owner enter number 2  |\n");
-        logger.info("| If you want to login as an tenant enter number 3 |\n");
-        logger.info("| If you are a new owner enter number 4            |\n");
-        logger.info("|__________________________________________________|\n");
+            logger.info("____________________________________________________\n");
+            logger.info("|        Welcome to Sakancom Services System       |\n");
+            logger.info("| If you want to login as an admin enter number 1  |\n");
+            logger.info("| If you want to login as an owner enter number 2  |\n");
+            logger.info("| If you want to login as an tenant enter number 3 |\n");
+            logger.info("| If you are a new owner enter number 4            |\n");
+            logger.info("|__________________________________________________|\n");
 
     }
 
-    public static void main(String[]args) {
-
+    public static void main(String[]args) throws InterruptedException {
         Scanner in = new Scanner(System.in);
         int option = 0;
+        String email;
+        String password;
         try {
             menu();
             option = in.nextInt();
@@ -51,24 +42,38 @@ public class Main {
             logger.info("please enter a valid number");
             main(new String[5]);
         }
-        if (option == 1) {
+        while (true) {
+            if (option == 1) {
+                Thread.sleep(1000);
+                logger.info("WELCOME TO LOGIN PAGE\n");
+                logger.info("Enter your email: ");
+                 email = in.nextLine();
+                logger.info("Enter your password: ");
+                 password = in.nextLine();
 
-        } else if(option==2) {
-         /*   RecordCustomer recordCustomer = new RecordCustomer();
-            recordCustomer.newCustomer();*/
-        }else if(option==3){
+                if (email.equals("alaa@gmail.com") && password.equals("123456")){
+                    logger.info("You are in the admin page! \n");
+                }
+                else {
+                    logger.info("You have a wrong email or password \n");
+                }
+            }
+                else if (option == 2) {
+            } else if (option == 3) {
 
-        }else if(option==4){
+            } else if (option == 4) {
 
-        }else{
-            logger.info("Please enter a valid number");
+            } else {
+                logger.info("Please enter a valid number \n");
+                menu();
+
+            }
         }
-
     }
 
     public static void userLogin(){
 
-        Scanner in=new Scanner(System.in);
+       /* Scanner in=new Scanner(System.in);
         logger.info("***************Welcome Back***************");
         while(true) {
             logger.info("Enter your email ");
@@ -97,8 +102,8 @@ public class Main {
             }
             else {
                 logger.info("Incorrect user name or password, try again");
-            }*/
+            }
 
-        }
+        }*/
     }
 }

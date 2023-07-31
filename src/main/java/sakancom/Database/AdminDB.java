@@ -17,6 +17,7 @@ public class AdminDB {
         admins.add(new Admin("lemara","lemo"));
     }
     public static void addAdmin(String email,String password) {
+
         admins.add(new Admin(email, password));
     }
 

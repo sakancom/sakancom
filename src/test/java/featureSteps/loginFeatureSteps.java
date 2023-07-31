@@ -35,8 +35,6 @@ public class loginFeatureSteps {
           myApp.errorInLogin();
         }
 
-
-
         @Then("I should see Access your account")
         public void iShouldSeeAccessYourAccount() {
           myApp.loggInCheck(email,password);
