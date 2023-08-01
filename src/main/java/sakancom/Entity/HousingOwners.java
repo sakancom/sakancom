@@ -9,6 +9,10 @@ public class HousingOwners {
     private String name;
     private int id;
 
+    public HousingOwners() {
+
+    }
+
     public HousingOwners(String password, String email, String phone, String address, String name, int id) {
         this.password = password;
         this.email = email;

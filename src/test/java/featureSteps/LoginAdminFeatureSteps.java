@@ -35,10 +35,6 @@ public class LoginAdminFeatureSteps {
     @Then("the admin is logged in the app successfully")
     public void theAdminIsLoggedInTheAppSuccessfully() {
         myApp.loggInCheck(email,password);
-       // System.out.println(email);
-       // System.out.println(password);
-
-       // System.out.println(myApp.isLoggedIn());
         assertTrue(myApp.isLoggedIn());
 
     }
