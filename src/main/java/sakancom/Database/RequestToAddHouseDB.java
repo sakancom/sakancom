@@ -1,6 +1,7 @@
 package sakancom.Database;
 
 import sakancom.Entity.House;
+import sakancom.LoggerUtility;
 import sakancom.serveses.AppLogger;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.logging.Logger;
 
 public class RequestToAddHouseDB {
     private static List <House> houses=new ArrayList<House>();
-    private static final Logger logger = Logger.getLogger(HouseDB.class.getName());
+    private static final Logger logger = LoggerUtility.getLogger();
 
     private RequestToAddHouseDB() {
         throw new IllegalStateException("Utility class");
@@ -33,7 +34,7 @@ public class RequestToAddHouseDB {
             logger.info("id: "+ house.getId() +"\n");
     }
     public static void displayHouses(List<House> houses) {
-        logger.info("------------Houses------------");
+        logger.info("------------Houses------------\n");
 
         for(House h:houses)
         {

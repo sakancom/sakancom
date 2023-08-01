@@ -2,12 +2,14 @@ package sakancom.serveses;
 
 import sakancom.Database.AdminDB;
 import sakancom.Entity.Admin;
+import sakancom.LoggerUtility;
 
 import java.util.logging.Logger;
 
 public class LoginToMyAppAsAdmin {
 
-    private static final Logger logger = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
+    private static final Logger logger2 = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
+    private static final Logger logger = LoggerUtility.getLogger();
     private boolean isLoggedIn;
 
     public LoginToMyAppAsAdmin() {

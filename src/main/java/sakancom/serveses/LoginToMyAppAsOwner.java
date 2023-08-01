@@ -2,12 +2,13 @@ package sakancom.serveses;
 
 import sakancom.Database.OwnerDB;
 import sakancom.Entity.HousingOwners;
+import sakancom.LoggerUtility;
 
 
 import java.util.logging.Logger;
 public class LoginToMyAppAsOwner{
 
-    private static final Logger logger = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
+    private static final Logger logger = LoggerUtility.getLogger();
     private boolean isLoggedIn;
 
     public LoginToMyAppAsOwner() {

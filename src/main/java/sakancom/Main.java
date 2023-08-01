@@ -16,22 +16,12 @@ package sakancom;
         import java.util.logging.*;
 
         import sakancom.serveses.LoginToMyAppAsOwner;
+        import sakancom.LoggerUtility;
 
 public class Main {
-    static Logger logger = Logger.getLogger(Main.class.getName());
+    private static Logger logger = LoggerUtility.getLogger();
 
     public static void menu(){
-        logger.setUseParentHandlers(false);
-        Formatter formatter = new Formatter() {
-            @Override
-            public String format(LogRecord record) {
-                return record.getMessage();
-            }
-        };
-        ConsoleHandler consoleHandler = new ConsoleHandler();
-        consoleHandler.setFormatter(formatter);
-        logger.addHandler(consoleHandler);
-
             logger.info("____________________________________________________\n");
             logger.info("|       Welcome to Sakancom Services System :)     |\n");
             logger.info("| If you want to login as an admin enter number 1  |\n");

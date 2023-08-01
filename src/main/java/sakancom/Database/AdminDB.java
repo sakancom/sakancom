@@ -1,12 +1,15 @@
 package sakancom.Database;
 
 import sakancom.Entity.Admin;
+import sakancom.LoggerUtility;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class AdminDB {
     static List <Admin> admins= new ArrayList<Admin>();
+    private static final Logger logger = LoggerUtility.getLogger();
     private AdminDB() {
         throw new IllegalStateException("Utility class");
     }

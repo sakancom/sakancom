@@ -3,6 +3,7 @@ package sakancom.Database;
 import sakancom.Entity.Admin;
 import sakancom.Entity.House;
 import sakancom.Entity.Tenant;
+import sakancom.LoggerUtility;
 import sakancom.serveses.AppLogger;
 
 
@@ -12,7 +13,7 @@ import java.util.logging.*;
 
 public class HouseDB {
     private static List <House> houses=new ArrayList<House>();
-    private static final Logger logger = Logger.getLogger(HouseDB.class.getName());
+    private static final Logger logger = LoggerUtility.getLogger();
 
     private HouseDB() {
         throw new IllegalStateException("Utility class");

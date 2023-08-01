@@ -2,11 +2,12 @@ package sakancom.serveses;
 
 import sakancom.Database.TenantDB;
 import sakancom.Entity.Tenant;
+import sakancom.LoggerUtility;
 
 import java.util.logging.Logger;
 
 public class LoginToMyAppAsTenant {
-    private static final Logger logger = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
+    private static final Logger logger = LoggerUtility.getLogger();
     private boolean isLoggedIn;
 
     public LoginToMyAppAsTenant() {

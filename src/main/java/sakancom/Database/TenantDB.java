@@ -2,12 +2,14 @@ package sakancom.Database;
 
 import sakancom.Entity.HousingOwners;
 import sakancom.Entity.Tenant;
+import sakancom.LoggerUtility;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class TenantDB {
-    private static final Logger logger = Logger.getLogger(HouseDB.class.getName());
+    private static final Logger logger = LoggerUtility.getLogger();
 
     static List<Tenant> tenants= new ArrayList<Tenant>();
     private TenantDB() {
