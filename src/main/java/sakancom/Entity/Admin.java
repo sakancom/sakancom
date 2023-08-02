@@ -4,7 +4,7 @@ public class Admin {
     private String password ;
     private String email;
 
-    public Admin(String farah, String s) {
+    public Admin(String email, String password) {
         this.email = email;
         this.password=password;
     }

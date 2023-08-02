@@ -1,22 +1,20 @@
 package sakancom.serveses;
 
-import sakancom.Database.AdminDB;
-import sakancom.Entity.Admin;
+import sakancom.Database.TenantDB;
+import sakancom.Entity.Tenant;
 
 import java.util.logging.Logger;
 
-public class LoginToMyAppAsAdmin {
-
+public class LoginToMyAppAsTenant {
     private static final Logger logger = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
     private boolean isLoggedIn;
 
-    public LoginToMyAppAsAdmin() {
+    public LoginToMyAppAsTenant() {
         this.isLoggedIn = false;
         AppLogger.setLevel(logger);
     }
 
     public boolean isLoggedIn() {
-
         return isLoggedIn;
     }
     public void logout() {
@@ -25,16 +23,16 @@ public class LoginToMyAppAsAdmin {
     }
     public void login() {
 
-        isLoggedIn = true;
+        isLoggedIn=true;
     }
     public void errorInLogin() {
 
         logger.info("Something WRONG!,The username or the password is not correct");
     }
     public void loggInCheck(String email, String password) {
-        for(Admin admin: AdminDB.getAdmins())
+        for(Tenant tenant: TenantDB.getTenants())
         {
-            if (email.equals(admin.getEmail()) && password.equals(admin.getPassword()))
+            if (email.equals(tenant.getEmail()) && password.equals(tenant.getPassword()))
             {
                 login();
             }
@@ -46,10 +44,7 @@ public class LoginToMyAppAsAdmin {
         }
         else return false;
     }
+
+
+
 }
-
-
-
-
-
-
