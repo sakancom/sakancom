@@ -11,23 +11,41 @@ public class House {
    private String location;
    private List<String> services;
    private HousingOwners owner;
-   private boolean hasFurnitureWindow;
    private int totalApartments;
    private ArrayList <Apartment> apartments;
+   private int numOfFloor;
+   private String photo;
 
    public House() {
 
    }
 
-   public House(int id, String location, List<String> services, HousingOwners owner, boolean hasFurnitureWindow, int totalApartments, ArrayList<Apartment> apartments) {
+   public House(int id, String location, List<String> services, HousingOwners owner, int totalApartments, ArrayList<Apartment> apartments , int numOfFloor , String photo) {
 
       this.id = id;
       this.location = location;
       this.services = services;
       this.owner = owner;
-      this.hasFurnitureWindow = hasFurnitureWindow;
       this.totalApartments = totalApartments;
       this.apartments = apartments;
+      this.numOfFloor = numOfFloor;
+      this.photo = photo;
+   }
+
+   public String getPhoto() {
+      return photo;
+   }
+
+   public void setPhoto(String photo) {
+      this.photo = photo;
+   }
+
+   public int getNumOfFloor() {
+      return numOfFloor;
+   }
+
+   public void setNumOfFloor(int numOfFloor) {
+      this.numOfFloor = numOfFloor;
    }
 
    public int getId() {
@@ -62,13 +80,6 @@ public class House {
       this.owner = owner;
    }
 
-   public boolean isHasFurnitureWindow() {
-      return hasFurnitureWindow;
-   }
-
-   public void setHasFurnitureWindow(boolean hasFurnitureWindow) {
-      this.hasFurnitureWindow = hasFurnitureWindow;
-   }
 
    public int getTotalApartments() {
       return totalApartments;

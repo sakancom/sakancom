@@ -13,11 +13,12 @@ public class Apartment {
     private boolean Balcony;
     private ArrayList <Tenant> tenant;
     private String rentPaymentDate;
+    private int floor;
 
     public Apartment() {
     }
 
-    public Apartment(int number, int area, int numOfRoom, int numOfBathrooms, double rent, int numOfTenant, boolean balcony, ArrayList<Tenant> tenant , boolean isAvailable, String rentPaymentDate) {
+    public Apartment(int number, int area, int numOfRoom, int numOfBathrooms, double rent, int numOfTenant, boolean balcony, ArrayList<Tenant> tenant , boolean isAvailable, String rentPaymentDate ,int floor) {
         this.number = number;
         this.area = area;
         NumOfRoom = numOfRoom;
@@ -28,6 +29,15 @@ public class Apartment {
         this.tenant = tenant;
         this.isAvailable = isAvailable;
         this.rentPaymentDate =  rentPaymentDate;
+        this.floor = floor;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
     }
 
     public int getNumber() {
@@ -138,7 +148,7 @@ public class Apartment {
         if (numOfTenant > tenant.size() ) {
             tenant.add(t);
             isAvailable();
-            System.out.println("Apartment " + number + " has been rented to " + t.getName());
+            System.out.println("DONE ! \n Apartment " + number + " has been rented to " + t.getName());
         } else {
             System.out.println("Apartment " + number + " is already rented.");
         }

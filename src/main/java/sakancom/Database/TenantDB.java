@@ -16,7 +16,7 @@ public class TenantDB {
     }
     static{
 
-        tenants.add(new Tenant("jana@gmail","000", "0655433", "nablus", "jana", 1 , 24 ,"sport"));
+        tenants.add(new Tenant("jana@gmail","000", "0655433", "nablus", "jana", 1 , 24 ,"sport" , true,new ArrayList<>(List.of("wardrobe", " sofa"))));
     }
     public static void addTenant(Tenant tenant) {
         tenants.add(tenant);

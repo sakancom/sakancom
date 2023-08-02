@@ -1,11 +1,15 @@
 package sakancom.Database;
 
 import sakancom.Entity.Admin;
+import sakancom.Entity.HousingOwners;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class AdminDB {
+    private static final Logger logger = Logger.getLogger(HouseDB.class.getName());
+
     static List <Admin> admins= new ArrayList<Admin>();
     private AdminDB() {
         throw new IllegalStateException("Utility class");
@@ -24,4 +28,13 @@ public class AdminDB {
     public static List<Admin> getAdmins() {
         return admins;
     }
+    public static void displayAdmin(Admin admin) {
+        if(admin == null)
+        {
+            logger.warning("This admin is not exist");
+        }
+        else
+            logger.info("Email: "+ admin.getEmail() + " Password: " + admin.getPassword() + "\n");
+    }
+
 }
