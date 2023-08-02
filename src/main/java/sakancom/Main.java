@@ -293,7 +293,7 @@ public class Main {
                 tenantApp.loggInCheck(email, password);
                 if (tenantApp.isLoggedIn()) {
                     for (Tenant t : TenantDB.getTenants()) {
-                        if (t.getEmail() == email) {
+                        if (t.getEmail().equals(email)) {
                             tenant = t;
                         }
                     }
@@ -367,7 +367,7 @@ public class Main {
                             for(House h : HouseDB.getHouses()){
                                for(Apartment a: h.getApartments()){
                                    for(Tenant t : a.getTenant()){
-                                       if(t.getEmail() == tenant.getEmail()){
+                                       if(t.getEmail().equals(tenant.getEmail())){
                                            HouseDB.displayHouse(h);
                                        }
                                    }
@@ -388,7 +388,7 @@ public class Main {
                             for(House h : HouseDB.getHouses()){
                                 for(Apartment a : h.getApartments()){
                                     for(Tenant t: a.getTenant()){
-                                        if(t.getEmail() == tenant.getEmail()){
+                                        if(t.getEmail().equals(tenant.getEmail())){
 
                                             for(Apartment A : h.getApartments()){
                                                 for(Tenant T: a.getTenant()){
