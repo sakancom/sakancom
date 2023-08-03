@@ -5,21 +5,35 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- معلومات المشروع -->
+    <!-- Project information -->
     <groupId>org.example</groupId>
     <artifactId>soft</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!-- خصائص المشروع -->
+    <!-- Project properties -->
     <properties>
-        <!-- اختر إصدار Java المدعوم والمتوافق -->
+        <!-- Choose a supported and compatible Java version -->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <!-- تعطيل التحليل التلقائي -->
-        <sonar.analysis.mode>preview</sonar.analysis.mode>
     </properties>
 
-    <!-- تعريف التبعيات (Dependencies) -->
+    <!-- Plugin configurations -->
+    <build>
+        <plugins>
+            <!-- Configure SonarQube Maven plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.0.2155</version>
+                <configuration>
+                    <!-- Disable Automatic Analysis -->
+                    <sonar.analysis.mode>publish</sonar.analysis.mode>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Dependencies -->
     <dependencies>
         <dependency>
             <groupId>io.cucumber</groupId>
