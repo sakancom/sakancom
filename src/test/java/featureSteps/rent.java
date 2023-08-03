@@ -9,12 +9,12 @@ public class rent {
     @Given("that the tenant is logged in")
     public void that_the_tenant_is_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
+        // throw new io.cucumber.java.PendingException();
     }
     @When("the tenant enter the order Id ={int}")
     public void the_tenant_enter_the_order_id(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
+        // throw new io.cucumber.java.PendingException();
     }
     @When("the house coast = {int}")
     public void the_house_coast(Integer int1) {

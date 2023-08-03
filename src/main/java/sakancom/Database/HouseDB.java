@@ -1,10 +1,8 @@
 package sakancom.Database;
 
-import sakancom.Entity.Admin;
+import sakancom.Entity.Apartment;
 import sakancom.Entity.House;
-import sakancom.Entity.Tenant;
 import sakancom.LoggerUtility;
-import sakancom.serveses.AppLogger;
 
 
 import java.util.ArrayList;
@@ -32,28 +30,47 @@ public class HouseDB {
         return houses;
     }
     public static void deleteHouse(int id) {
-        for(House h:houses)
-        {
-            if(h.getId() == id){
-                houses.remove(h);
-            }
-        }
+        houses.removeIf(h -> h.getId() == id);
     }
-
     public static void displayHouse(House house) {
         if(house==null)
         {
-            logger.warning("This house is not exist");
+            logger.info("------------------------------------------------------------\n");
+         logger.warning("|This house is not exist                                   |\n");
+            logger.info("|__________________________________________________________|\n");
         }
         else
-            logger.info("id: "+ house.getId() +"\n");
+            logger.info("id: " + house.getId() + "\n" + "the Owner:  " +house.getOwner().getName()+ "\n" + "the location: "
+                    + house.getLocation() + "\n" + "the services: " + house.getServices() + "\n" + "has Furniture Window: "
+                    + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n");
+        logger.info("------------------------------------------------------------\n");
+        logger.info("|Apartments in this house:\n");
+        logger.info("------------------------------------------------------------\n");
+        for (Apartment apartment : house.getApartments()) {
+            logger.info("Apartment Number: " + apartment.getNumber() + "\n"
+                    + "Area: " + apartment.getArea() + "\n"
+                    + "Number of Rooms: " + apartment.getNumOfRoom() + "\n"
+                    + "Number of Bathrooms: " + apartment.getNumOfBathrooms() + "\n"
+                    //+ "Number of Bedrooms: " + apartment.getNumOfBedrooms() + "\n"
+                    + "Rent: " + apartment.getRent() + "\n"
+                    + "Total Number of Tenants: " + apartment.getNumOfTenant() + "\n"
+                    + "Has a Balcony: " + (apartment.isBalcony() ? "Yes" : "No") + "\n"
+                    + "Rent Payment Date: " + apartment.getRentPaymentDate() + "\n");
+            logger.info("------------------------------------------------------------\n");
+        }
+
     }
     public static void displayHouses(List<House> houses) {
         for(House h:houses)
         {
             displayHouse(h);
         }
+    }
+    public static void UpdateHouses(List<House> houses){
+        for(House h:houses)
+        {
+            displayHouse(h);
+        }
 
     }
-
 }

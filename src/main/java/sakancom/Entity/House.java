@@ -1,25 +1,27 @@
 package sakancom.Entity;
 
+import sakancom.serveses.LoginToMyAppAsOwner;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // comment for test
 
 
-public class House {
+public class House extends LoginToMyAppAsOwner {
    private int id;
    private String location;
    private List<String> services;
    private HousingOwners owner;
-   private boolean hasFurnitureWindow;
+   private String hasFurnitureWindow;
    private int totalApartments;
-   private ArrayList <Apartment> apartments;
+   private ArrayList<Apartment> apartments;
 
    public House() {
 
    }
 
-   public House(int id, String location, List<String> services, HousingOwners owner, boolean hasFurnitureWindow, int totalApartments, ArrayList<Apartment> apartments) {
+   public House(int id, String location, List<String> services, HousingOwners owner, String hasFurnitureWindow, int totalApartments, ArrayList<Apartment> apartments) {
 
       this.id = id;
       this.location = location;
@@ -62,11 +64,11 @@ public class House {
       this.owner = owner;
    }
 
-   public boolean isHasFurnitureWindow() {
+   public String getHasFurnitureWindow() {
       return hasFurnitureWindow;
    }
 
-   public void setHasFurnitureWindow(boolean hasFurnitureWindow) {
+   public void setHasFurnitureWindow(String hasFurnitureWindow) {
       this.hasFurnitureWindow = hasFurnitureWindow;
    }
 
@@ -84,5 +86,9 @@ public class House {
 
    public void setApartments(ArrayList<Apartment> apartments) {
       this.apartments = apartments;
+   }
+
+   public List<Apartment> getApartment() {
+      return apartments;
    }
 }

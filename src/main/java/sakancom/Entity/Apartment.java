@@ -3,6 +3,7 @@ package sakancom.Entity;
 import java.util.ArrayList;
 
 public class Apartment {
+    private int id;
     private int number;
     private int area;
     private int NumOfRoom;
@@ -17,7 +18,8 @@ public class Apartment {
     public Apartment() {
     }
 
-    public Apartment(int number, int area, int numOfRoom, int numOfBathrooms, double rent, int numOfTenant, boolean balcony, ArrayList<Tenant> tenant , boolean isAvailable, String rentPaymentDate) {
+    public Apartment(int id,int number, int area, int numOfRoom, int numOfBathrooms, double rent, int numOfTenant, boolean balcony, ArrayList<Tenant> tenant , boolean isAvailable, String rentPaymentDate) {
+        this.id = number;
         this.number = number;
         this.area = area;
         NumOfRoom = numOfRoom;
@@ -30,6 +32,10 @@ public class Apartment {
         this.rentPaymentDate =  rentPaymentDate;
     }
 
+
+    public int getId() {
+        return id;
+    }
     public int getNumber() {
         return number;
     }
@@ -67,6 +73,7 @@ public class Apartment {
     }
 
     public void setRent(double rent) {
+
         this.rent = rent;
     }
 
@@ -132,6 +139,10 @@ public class Apartment {
                 System.out.println("Tenant: " + t.getName() + " - " + ", Contact: " + t.getPhone() + ", Address: " + t.getAddress() +", University Major: " + t.getUniversityMajors()+", Age: " + t.getAge());
             }
             }
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void rentApartment(Tenant t) {

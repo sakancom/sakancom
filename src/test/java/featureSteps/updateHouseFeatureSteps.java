@@ -3,142 +3,104 @@ package featureSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sakancom.Database.HouseDB;
+import sakancom.Entity.Apartment;
+import sakancom.Entity.House;
+import sakancom.LoggerUtility;
+import sakancom.serveses.AppLogger;
+import sakancom.serveses.LoginToMyAppAsOwner;
+
+import java.util.logging.Logger;
+
+import static org.junit.Assert.assertTrue;
 
 public class updateHouseFeatureSteps {
-    @Given("there is a House with id {int}")
-    public void thereIsAHouseWithId(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-     //   throw new io.cucumber.java.PendingException();
-    }
-    @When("the owner want to change the rent of the House to {double}")
-    public void theownerWantToChangeTheRentOfTheHouseTo(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-   //     throw new io.cucumber.java.PendingException();
-    }
-    @Then("the House's rent should be {double} and the update done")
-    public void theHouseSRentShouldBeAndTheUpdateDone(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
+    private static final Logger logger = LoggerUtility.getLogger();
+    LoginToMyAppAsOwner loginToMyAppAsOwner;
+    Apartment apartment = new Apartment();
+    String password, email;
+
+    public updateHouseFeatureSteps() {
+        loginToMyAppAsOwner = new LoginToMyAppAsOwner();
+        loginToMyAppAsOwner.login();
+        AppLogger.setLevel(logger);
     }
 
+    @Given("that the owner is logged in")
+    public void thatTheOwnerIsLoggedIn() {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+        assertTrue(loginToMyAppAsOwner.isLoggedIn());
+
+    }
+
+    @Given("there is a House with id {int}")
+    public void thereIsAHouseWithId(Integer id) {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+        loginToMyAppAsOwner = HouseDB.getHouses().get(id);
+    }
+
+    @When("the owner want to change the rent of the House to {double}")
+    public void theownerWantToChangeTheRentOfTheHouseTo(Double rent) {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+        apartment.setRent(rent);
+
+
+    }
+
+    @Then("the House's rent should be {double} and the update done")
+    public void theHouseSRentShouldBeAndTheUpdateDone(Double rent) {
+        // Write code here that turns the phrase above into concrete actions
+        //    throw new io.cucumber.java.PendingException();
+        apartment.setRent(rent);
+
+    }
+
+
+    @Given("that the owner is logged in the system")
+    public void thatTheOwnerIsLoggedInTheSystem() {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+        assertTrue(loginToMyAppAsOwner.isLoggedIn());
+    }
 
 
     @Given("there is a House with id equal {int}")
-    public void thereIsAHouseWithIdEqual(Integer int1) {
+    public void thereIsAHouseWithIdEqual(Integer id) {
         // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
+        //    throw new io.cucumber.java.PendingException();
+        loginToMyAppAsOwner = HouseDB.getHouses().get(id);
+
     }
+
     @When("the owner want to change the availability of the House to false")
     public void theownerWantToChangeTheAvailabilityOfTheHouseToFalse() {
         // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
+        //    throw new io.cucumber.java.PendingException();
+        apartment.setAvailable(false);
     }
+
     @Then("the House's availability should be false and the update done")
     public void theHouseSAvailabilityShouldBeFalseAndTheUpdateDone() {
         // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
+        //    throw new io.cucumber.java.PendingException();
+        apartment.setAvailable(false);
     }
 
-
-
-    @Given("that the owner is log in")
-    public void thatTheownerIsLogIn() {
+    @When("the owner want to change the number of the tenant to {int}")
+    public void the_owner_want_to_change_the_number_of_the_tenant_to(Integer number) {
         // Write code here that turns the phrase above into concrete actions
-     //   throw new io.cucumber.java.PendingException();
-    }
-    @Given("there is House with id {int}")
-    public void thereIsHouseWithId(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
-    }
-    @When("the owner want to change the tenantData of the House as table:")
-    public void theownerWantToChangeTheTenantDataOfTheHouseAsTable(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-      //  throw new io.cucumber.java.PendingException();
-    }
-    @Then("the tenantData should be null")
-    public void theTenantDataShouldBeNull() {
-        // Write code here that turns the phrase above into concrete actions
-     //   throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
+        apartment.setNumOfTenant(number);
     }
 
+    @Then("the update done")
+    public void the_update_done() {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
 
+}
 
-    @Given("that the owner is in system")
-    public void thatTheownerIsInSystem() {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
-    }
-    @Given("the owner want to update house with id {int}")
-    public void theownerWantToUpdateHouseWithId(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-      //  throw new io.cucumber.java.PendingException();
-    }
-    @When("the owner want to update the rent of the House to be {double}")
-    public void theownerWantToUpdateTheRentOfTheHouseToBe(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-      //  throw new io.cucumber.java.PendingException();
-    }
-    @Then("the update can't complete and the error message will appear")
-    public void theUpdateCanTCompleteAndTheErrorMessageWillAppear() {
-        // Write code here that turns the phrase above into concrete actions
-     //   throw new io.cucumber.java.PendingException();
-    }
-
-
-    @Given("that the owner is log in successfully")
-    public void thatTheownerIsLogInSuccessfully() {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
-    }
-    @Given("the owner want to update house with id equal {int}")
-    public void theownerWantToUpdateHouseWithIdEqual(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
-    }
-    @When("the owner want to update the availability of the House to be false")
-    public void theownerWantToUpdateTheAvailabilityOfTheHouseToBeFalse() {
-        // Write code here that turns the phrase above into concrete actions
-   //     throw new io.cucumber.java.PendingException();
-    }
-    @Then("the update can't done and the error message will appear")
-    public void theUpdateCanTDoneAndTheErrorMessageWillAppear() {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
-    }
-
-
-
-    @Given("that the owner is logged in the system successfully")
-    public void thatTheownerIsLoggedInTheSystemSuccessfully() {
-        // Write code here that turns the phrase above into concrete actions
-     //   throw new io.cucumber.java.PendingException();
-    }
-    @Given("there is a House the owner want to update  with id  {int}")
-    public void thereIsAHouseTheownerWantToUpdateWithId(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-      //  throw new io.cucumber.java.PendingException();
-    }
-    @When("the owner want to change the tenantData of the House to ba as the table shows")
-    public void theownerWantToChangeTheTenantDataOfTheHouseToBaAsTheTableShows(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-      //  throw new io.cucumber.java.PendingException();
-    }
-    @Then("the update can't complete and the error message will appear to owner")
-    public void theUpdateCanTCompleteAndTheErrorMessageWillAppearToowner() {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new io.cucumber.java.PendingException();
-    }
 }

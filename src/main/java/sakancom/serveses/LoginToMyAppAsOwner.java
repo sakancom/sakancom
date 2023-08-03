@@ -26,7 +26,7 @@ public class LoginToMyAppAsOwner{
         isLoggedIn=true;
     }
     public void errorInLogin() {
-        logger.info("Something WRONG!,The username or the password is not correct");
+        logger.info("Something WRONG!,The username or the password is not correct \n" );
     }
     public void loggInCheck(String email, String password) {
         for(HousingOwners owner: OwnerDB.getOwners())

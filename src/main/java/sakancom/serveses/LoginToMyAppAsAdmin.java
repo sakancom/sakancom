@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 
 public class LoginToMyAppAsAdmin {
 
-    private static final Logger logger2 = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
     private static final Logger logger = LoggerUtility.getLogger();
     private boolean isLoggedIn;
 
@@ -31,7 +30,9 @@ public class LoginToMyAppAsAdmin {
     }
     public void errorInLogin() {
 
-        logger.info("Something WRONG!,The username or the password is not correct");
+        logger.info("___________________________________________________________________________________\n");
+     logger.warning("|             Something WRONG!,The username or the password is not correct        |\n");
+        logger.info("|_________________________________________________________________________________|\n");
     }
     public void loggInCheck(String email, String password) {
         for(Admin admin: AdminDB.getAdmins())

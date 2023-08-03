@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class TenantDB {
-    private static final Logger logger = LoggerUtility.getLogger();
+    public static final Logger logger = LoggerUtility.getLogger();
 
     static List<Tenant> tenants= new ArrayList<Tenant>();
     private TenantDB() {
@@ -28,16 +28,17 @@ public class TenantDB {
         return tenants;
     }
     public static void displayTenant(Tenant tenant) {
-        if(tenant == null)
-        {
+        if (tenant == null) {
             logger.warning("This tenant is not exist");
+        } else {
+            String tenantInfo = String.format("|%32d|", tenant.getId()) + String.format("%30s|", tenant.getName());
+           logger.info(tenantInfo+"\n");
         }
-        else
-            logger.info("id: "+ tenant.getId() + " Name " + tenant.getName());
     }
-    public static void displayTenants(List<Tenant> tenants) {
-        logger.info("------------Owners------------");
 
+    public static void displayTenants(List<Tenant> tenants) {
+        logger.info("-------------------------------Tenant----------------------------\n");
+        logger.info("|               id               |"+"              Name            |\n");
         for(Tenant t:tenants)
         {
             displayTenant(t);

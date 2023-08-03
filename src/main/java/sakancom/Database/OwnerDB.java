@@ -3,15 +3,17 @@ package sakancom.Database;
 import sakancom.Entity.Admin;
 import sakancom.Entity.House;
 import sakancom.Entity.HousingOwners;
+import sakancom.LoggerUtility;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class OwnerDB {
-    private static final Logger logger = Logger.getLogger(HouseDB.class.getName());
+    private static Logger logger = LoggerUtility.getLogger();
 
     static List <HousingOwners> owners= new ArrayList<HousingOwners>();
+    static HousingOwners housingOwners = new HousingOwners();
     private OwnerDB() {
         throw new IllegalStateException("Utility class");
     }
@@ -27,17 +29,22 @@ public class OwnerDB {
     public static List<HousingOwners> getOwners() {
         return owners;
     }
-    public static void displayOwner(HousingOwners owner) {
-        if(owner == null)
-        {
-            logger.warning("This owner is not exist");
-        }
-        else
-            logger.info("id: "+ owner.getId() + " Name " + owner.getName() + "\n");
-    }
-    public static void displayOwners(List<HousingOwners> owners) {
-        logger.info("------------Owners------------");
 
+    public static void displayOwner(HousingOwners owner) {
+        if (owner == null) {
+            logger.warning("This owner is not exist\n");
+        } else {
+            String ownerInfo = String.format("|%20s|", owner.getId()) + String.format("%20s|", owner.getName()) +
+                    String.format("%20s|", owner.getPhone())+String.format("%20s|", owner.getAddress())+
+                    String.format("%20s|", owner.getEmail());
+            logger.info(ownerInfo +"\n");
+
+        }
+    }
+
+    public static void displayOwners(List<HousingOwners> owners) {
+//        logger.info("-------------------------------Owners-------------------------------\n");
+//        logger.info("|     id     |"+"    Name     |"+"    Phone     |"+"     address     |"+"    email     |");
         for(HousingOwners o:owners)
         {
             displayOwner(o);

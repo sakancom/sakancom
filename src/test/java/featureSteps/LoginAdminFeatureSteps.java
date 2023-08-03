@@ -12,7 +12,6 @@ public class LoginAdminFeatureSteps {
     String password,email;
     public LoginAdminFeatureSteps()
     {
-
         myApp = new LoginToMyAppAsAdmin();
     }
 
