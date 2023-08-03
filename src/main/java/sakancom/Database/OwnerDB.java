@@ -43,8 +43,8 @@ public class OwnerDB {
     }
 
     public static void displayOwners(List<HousingOwners> owners) {
-//        logger.info("-------------------------------Owners-------------------------------\n");
-//        logger.info("|     id     |"+"    Name     |"+"    Phone     |"+"     address     |"+"    email     |");
+        logger.info("-------------------------------Owners-------------------------------\n");
+        logger.info("|     id     |"+"    Name     |"+"    Phone     |"+"     address     |"+"    email     |");
         for(HousingOwners o:owners)
         {
             displayOwner(o);

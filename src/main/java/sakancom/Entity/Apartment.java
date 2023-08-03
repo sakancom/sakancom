@@ -1,8 +1,12 @@
 package sakancom.Entity;
 
+import sakancom.LoggerUtility;
+
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Apartment {
+    private static Logger logger = LoggerUtility.getLogger();
     private int id;
     private int number;
     private int area;
@@ -125,20 +129,27 @@ public class Apartment {
     public void displayInfo() {
         String  balconyFlag, isAvailableFlag ;
         if (Balcony){
-            balconyFlag = " has a balcony ";
-        }else balconyFlag = " doesn't has a balcony ";
+            balconyFlag = "has a balcony ";
+        }
+        else balconyFlag = "doesn't has a balcony ";
 
         if(isAvailable){
-            isAvailableFlag = " is available to rent.. ";
-        }else isAvailableFlag = " is not available to rent.. ";
-        System.out.println("Apartment " + number + " - " + NumOfRoom + " Room, " + NumOfBathrooms + " bathrooms, "
-                + area + " sq. ft., Rent: $" + rent + " per month" +" - "+ balconyFlag + numOfTenant +" - "+ isAvailableFlag +" - " +" Rent Payment Date: " + rentPaymentDate  );
+            isAvailableFlag = "is available to rent.. ";
+        }else isAvailableFlag = "is not available to rent.. ";
+       logger.info("Apartment " + number + "\n" + NumOfRoom + " Room \n" + NumOfBathrooms + " Bathrooms \n"
+                + area + " sq. ft.\nRent: $" + rent + " per month \n" + balconyFlag+"\n" + numOfTenant+" Number of tenant \n" +
+               isAvailableFlag +"\nRent Payment Date: " + rentPaymentDate + "\n");
+
 
         if (tenant.size() != 0) {
+
+            logger.info("---------------------------------The Tenant information--------------------------------\n");
             for (Tenant t : tenant) {
-                System.out.println("Tenant: " + t.getName() + " - " + ", Contact: " + t.getPhone() + ", Address: " + t.getAddress() +", University Major: " + t.getUniversityMajors()+", Age: " + t.getAge());
+
+               logger.info("Tenant: " + t.getName() + "\nContact: " + t.getPhone() + "\nAddress: " +
+                        t.getAddress() +"\nUniversity Major: " + t.getUniversityMajors()+"\nAge: " + t.getAge()+ "\n");
             }
-            }
+        }
     }
 
     public void setId(int id) {
@@ -146,14 +157,12 @@ public class Apartment {
     }
 
     public void rentApartment(Tenant t) {
-        if (numOfTenant > tenant.size() ) {
+        if (numOfTenant > tenant.size()) {
             tenant.add(t);
-            isAvailable();
-            System.out.println("Apartment " + number + " has been rented to " + t.getName());
+            isAvailableToRent();
+           logger.info("Apartment " + number + "\nhas been rented to " + t.getName() + "\n");
         } else {
-            System.out.println("Apartment " + number + " is already rented.");
+            logger.info("Apartment " + number + "\nis already rented\n");
         }
     }
-
-
 }

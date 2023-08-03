@@ -2,7 +2,10 @@ package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import sakancom.LoggerUtility;
 import sakancom.serveses.LoginToMyAppAsTenant;
+
+import java.util.logging.Logger;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -10,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class LoginTenantFeatureSteps {
     LoginToMyAppAsTenant myApp;
     String password,email;
-
+    private static Logger logger = LoggerUtility.getLogger();
     public LoginTenantFeatureSteps() {
         myApp = new LoginToMyAppAsTenant();
     }

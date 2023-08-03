@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class TenantDB {
-    public static final Logger logger = LoggerUtility.getLogger();
-
+    private static Logger logger = LoggerUtility.getLogger();
     static List<Tenant> tenants= new ArrayList<Tenant>();
     private TenantDB() {
 
@@ -18,7 +17,7 @@ public class TenantDB {
     }
     static{
 
-        tenants.add(new Tenant("jana@gmail","000", "0655433", "nablus", "jana", 1 , 24 ,"sport"));
+        tenants.add(new Tenant("jana@gmail","000", "0655433", "nablus", "jana", 1 , 24 ,"sport" , true,new ArrayList<>(List.of("wardrobe", " sofa"))));
     }
     public static void addTenant(Tenant tenant) {
         tenants.add(tenant);
@@ -28,17 +27,21 @@ public class TenantDB {
         return tenants;
     }
     public static void displayTenant(Tenant tenant) {
-        if (tenant == null) {
+        if(tenant == null)
+        {
             logger.warning("This tenant is not exist");
-        } else {
-            String tenantInfo = String.format("|%32d|", tenant.getId()) + String.format("%30s|", tenant.getName());
-           logger.info(tenantInfo+"\n");
+        }
+        else{
+            String tenantInfo = String.format("|%19s|", tenant.getId()) + String.format("%15s|", tenant.getName()) +
+                    String.format("%13s|", tenant.getPhone())+String.format("%s10|", tenant.getAge())+
+                    String.format("%25s|", tenant.getUniversityMajors())+String.format("%25s|", tenant.getFurniture());
+            logger.info(tenantInfo+"\n");
         }
     }
-
     public static void displayTenants(List<Tenant> tenants) {
         logger.info("-------------------------------Tenant----------------------------\n");
-        logger.info("|               id               |"+"              Name            |\n");
+        logger.info("|     id     |"+"    Name     |"+"    Phone    " +
+                " |"+"       Age       |"+"    University Major     |"+"     Has furniture     |");
         for(Tenant t:tenants)
         {
             displayTenant(t);
