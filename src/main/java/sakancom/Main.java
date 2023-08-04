@@ -220,9 +220,13 @@ public class Main {
                             }
                             newHouse.setServices(services);
 
-                            logger.info("--hasFurnitureWindow? (yes or no):");
-                            String hasFurnitureWindow = in.next();
-                            newHouse.setHasFurnitureWindow(hasFurnitureWindow);
+                            logger.info("--Add Photo:");
+                            String photo = in.next();
+                            newHouse.setHasFurnitureWindow(photo);
+
+                             logger.info("--The Number of Floors:");
+                             int numFloor = in.nextInt();
+                             newHouse.setNumOfFloor(numFloor);
 
                             logger.info("--the number of Apartments: ");
                             newHouse.setTotalApartments(in.nextInt());
@@ -257,11 +261,14 @@ public class Main {
                                 logger.info("--Has a Balcony ?(yes or no): ");
                                 String balcony = in.next();
 
+
                                 if(balcony.equalsIgnoreCase("yse")){
                                     newApartment.setBalcony(true);
                                 }else {
                                     newApartment.setBalcony(false);
                                 }
+                                logger.info("--The Floor's Number ");
+                                newApartment.setFloorNum(in.nextInt());
 
                                 newApartment.setTenant(new ArrayList<>());
                                 newApartment.setAvailable(true);
@@ -297,7 +304,8 @@ public class Main {
                                      logger.info("------------House Options--------------\n");
                                      logger.info("| 1- Delete House                     |\n");
                                      logger.info("| 2- Update House                     |\n");
-                                     logger.info("| 3- Back                             |\n");
+                                     logger.info("| 3- Show Details of specific House   |\n");
+                                     logger.info("| 4- Back                             |\n");
                                      logger.info(" --------------------------------------\n");
                                      int innerOption = in.nextInt();
                                      if (innerOption == 1) {
@@ -433,8 +441,32 @@ public class Main {
                                                  }
                                              }
                                          }
-                                     } else if (innerOption == 3) {
-                                         break;
+                                     } else if(innerOption == 3) {
+                                         logger.info("__________________________________________________________\n");
+                                         logger.warning("|Please Enter the Id of the House you want to show       |\n");
+                                         logger.info("|________________________________________________________|\n");
+                                         int id = in.nextInt();
+                                         for(House h : HouseDB.getHouses()) {
+                                             if(h.getId() == id){
+                                                 HouseDB.displayHouse(h);
+                                             }
+                                         }
+                                         logger.info("_______________________________________________________________\n");
+                                      logger.warning("|Please Enter the Floor's Number to show the Apartments on it |\n");
+                                         logger.info("|_____________________________________________________________|\n");
+                                         int floorNum = in.nextInt();
+                                         for(House h : HouseDB.getHouses()){
+                                             if(h.getId() == id){
+                                                 for(Apartment a : h.getApartments()){
+                                                     if(a.getFloorNum() == floorNum){
+                                                         a.displayInfo();
+                                                     }
+                                                 }
+                                             }
+                                         }
+
+                                     } else if(innerOption == 4){
+                                             break;
                                      }
                                  }
                              }
@@ -464,6 +496,7 @@ public class Main {
 /////////////////////////////////////////Tenant page//////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////Tenant Page//////////////////////////////////////////////////////////
             else if (option == 3) {
+                int HouseRentId =-1;
                 Tenant tenant = new Tenant();
                 LoginToMyAppAsTenant tenantApp = new LoginToMyAppAsTenant();
                 tenantApp.loggInCheck(email, password);
@@ -521,13 +554,13 @@ public class Main {
                                     logger.info("__________________________________________________________\n");
                                  logger.warning("|Please Enter the Id of the House you want to Rent       |\n");
                                     logger.info("|________________________________________________________|\n");
-                                    int id = in.nextInt();
+                                     HouseRentId = in.nextInt();
                                     logger.info("__________________________________________________________\n");
                                  logger.warning("|Please Enter the Id of the Apartment you want to Rent   |\n");
                                     logger.info("|________________________________________________________|\n");
                                     int number = in.nextInt();
                                     for(House h : HouseDB.getHouses()){
-                                        if(h.getId() == id){
+                                        if(h.getId() == HouseRentId){
                                             for(Apartment a : h.getApartments()){
                                                 if(a.getNumber() == number){
                                                     a.rentApartment(tenant);
@@ -569,15 +602,18 @@ public class Main {
                             logger.info("|__________________________________________________________________|\n");
 
                         }else if(tenantOption == 4){
-                            for(House h : HouseDB.getHouses()){
-                                for(Apartment a : h.getApartments()){
-                                    for(Tenant t: a.getTenant()){
-                                        if(t.getEmail().equals(tenant.getEmail())){
-                                            for(Apartment A : h.getApartments()){
-                                                for(Tenant T: a.getTenant()) {
-                                                    if (T.getEmail() != email) {
-                                                        TenantDB.displayTenant(T);
-                                                    }
+                            if(HouseRentId ==-1){
+                                logger.info("____________________________________________________________________\n");
+                                logger.warning("|You haven't rented a house yet....                            |\n");
+                                logger.info("|__________________________________________________________________|\n");
+
+                            }else {
+                                for (House h : HouseDB.getHouses()) {
+                                    if (h.getId() == HouseRentId) {
+                                        for (Apartment a : h.getApartments()) {
+                                            for(Tenant t : a.getTenant()){
+                                                if(!(t.getEmail().equals(email)) ){
+                                                    TenantDB.displayTenant(t);
                                                 }
                                             }
                                         }

@@ -32,7 +32,7 @@ public class RequestToAddHouseDB {
     public static void displayHouse(House house) {
         logger.info("id: " + house.getId() + "\n" + "the Owner: " + house.getOwner().getName()+ "\n" + "the location: "
                 + house.getLocation() + "\n" + "the services: " + house.getServices() + "\n" + "has Furniture Window: "
-                + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n");
+                + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n"+ "Photo: " + house.getPhoto() + "\n"+ "the number of floor: " + house.getNumOfFloor() + "\n");
 
         logger.info("------------------------\n");
         logger.info("Apartments in this house:\n");
@@ -46,7 +46,10 @@ public class RequestToAddHouseDB {
                     + "Rent: " + apartment.getRent() + "\n"
                     + "Total Number of Tenants: " + apartment.getNumOfTenant() + "\n"
                     + "Has a Balcony: " + (apartment.isBalcony() ? "Yes" : "No") + "\n"
-                    + "Rent Payment Date: " + apartment.getRentPaymentDate() + "\n");
+                    + "Rent Payment Date: " + apartment.getRentPaymentDate() + "\n"
+                    + "Photo: " + apartment.getPhoto() + "\n"
+                    + "Floor's Number: " + apartment.getFloorNum()+ "\n");
+
             logger.info("------------------------\n");
         }
 

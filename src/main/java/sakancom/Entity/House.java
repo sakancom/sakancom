@@ -16,12 +16,13 @@ public class House extends LoginToMyAppAsOwner {
    private String hasFurnitureWindow;
    private int totalApartments;
    private ArrayList<Apartment> apartments;
-
+   private String photo;
+   private int numOfFloor;
    public House() {
 
    }
 
-   public House(int id, String location, List<String> services, HousingOwners owner, String hasFurnitureWindow, int totalApartments, ArrayList<Apartment> apartments) {
+   public House(int id, String location, List<String> services, HousingOwners owner, String hasFurnitureWindow, int totalApartments, ArrayList<Apartment> apartments,String photo ,int numOfFloor) {
 
       this.id = id;
       this.location = location;
@@ -30,6 +31,24 @@ public class House extends LoginToMyAppAsOwner {
       this.hasFurnitureWindow = hasFurnitureWindow;
       this.totalApartments = totalApartments;
       this.apartments = apartments;
+      this.photo = photo;
+      this.numOfFloor = numOfFloor;
+   }
+
+   public int getNumOfFloor() {
+      return numOfFloor;
+   }
+
+   public void setNumOfFloor(int numOfFloor) {
+      this.numOfFloor = numOfFloor;
+   }
+
+   public String getPhoto() {
+      return photo;
+   }
+
+   public void setPhoto(String photo) {
+      this.photo = photo;
    }
 
    public int getId() {

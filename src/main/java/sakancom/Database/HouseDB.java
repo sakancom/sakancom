@@ -42,7 +42,7 @@ public class HouseDB {
         else
             logger.info("id: " + house.getId() + "\n" + "the Owner:  " +house.getOwner().getName()+ "\n" + "the location: "
                     + house.getLocation() + "\n" + "the services: " + house.getServices() + "\n" + "has Furniture Window: "
-                    + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n");
+                    + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n"+"Photo: " + house.getPhoto() + "\n" + "the number of Floor: " + house.getNumOfFloor()+ "\n");
         logger.info("------------------------------------------------------------\n");
         logger.info("|Apartments in this house:\n");
         logger.info("------------------------------------------------------------\n");
@@ -55,7 +55,11 @@ public class HouseDB {
                     + "Rent: " + apartment.getRent() + "\n"
                     + "Total Number of Tenants: " + apartment.getNumOfTenant() + "\n"
                     + "Has a Balcony: " + (apartment.isBalcony() ? "Yes" : "No") + "\n"
-                    + "Rent Payment Date: " + apartment.getRentPaymentDate() + "\n");
+                    + "Rent Payment Date: " + apartment.getRentPaymentDate() + "\n"
+                    + "Photo: " + apartment.getPhoto() + "\n"
+                    + "Floor Number: " + apartment.getFloorNum() + "\n");
+
+
             logger.info("------------------------------------------------------------\n");
         }
 
