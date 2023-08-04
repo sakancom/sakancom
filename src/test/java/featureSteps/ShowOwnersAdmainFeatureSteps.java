@@ -30,6 +30,7 @@ public class ShowOwnersAdmainFeatureSteps {
     }
     @Given("owner list have owners")
     public void owner_list_have_owners() {
+
         assertTrue(OwnerDB.getOwners().size() > 0);
     }
     @Then("the information of the owners will appear to admin page")

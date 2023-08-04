@@ -146,6 +146,7 @@ public class Apartment {
         }else isAvailable = false;
     }
     public void displayInfo() {
+
         String  balconyFlag, isAvailableFlag ;
         if (Balcony){
             balconyFlag = "has a balcony ";
