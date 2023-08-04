@@ -28,23 +28,19 @@ public class updateHouseFeatureSteps {
 
     @Given("that the owner is logged in")
     public void thatTheOwnerIsLoggedIn() {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+
         assertTrue(loginToMyAppAsOwner.isLoggedIn());
 
     }
 
     @Given("there is a House with id {int}")
     public void thereIsAHouseWithId(Integer id) {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+
         loginToMyAppAsOwner = HouseDB.getHouses().get(id);
     }
 
     @When("the owner want to change the rent of the House to {double}")
     public void theownerWantToChangeTheRentOfTheHouseTo(Double rent) {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
         apartment.setRent(rent);
 
 
@@ -52,8 +48,7 @@ public class updateHouseFeatureSteps {
 
     @Then("the House's rent should be {double} and the update done")
     public void theHouseSRentShouldBeAndTheUpdateDone(Double rent) {
-        // Write code here that turns the phrase above into concrete actions
-        //    throw new io.cucumber.java.PendingException();
+
         apartment.setRent(rent);
 
     }
@@ -61,24 +56,21 @@ public class updateHouseFeatureSteps {
 
     @Given("that the owner is logged in the system")
     public void thatTheOwnerIsLoggedInTheSystem() {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new io.cucumber.java.PendingException();
+
         assertTrue(loginToMyAppAsOwner.isLoggedIn());
     }
 
 
     @Given("there is a House with id equal {int}")
     public void thereIsAHouseWithIdEqual(Integer id) {
-        // Write code here that turns the phrase above into concrete actions
-        //    throw new io.cucumber.java.PendingException();
+
         loginToMyAppAsOwner = HouseDB.getHouses().get(id);
 
     }
 
     @When("the owner want to change the availability of the House to false")
     public void theownerWantToChangeTheAvailabilityOfTheHouseToFalse() {
-        // Write code here that turns the phrase above into concrete actions
-        //    throw new io.cucumber.java.PendingException();
+
         apartment.setAvailable(false);
     }
 

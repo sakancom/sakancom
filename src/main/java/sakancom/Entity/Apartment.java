@@ -18,11 +18,13 @@ public class Apartment {
     private boolean Balcony;
     private ArrayList <Tenant> tenant;
     private String rentPaymentDate;
+    private String photo;
+    private int floorNum ;
 
     public Apartment() {
     }
 
-    public Apartment(int id,int number, int area, int numOfRoom, int numOfBathrooms, double rent, int numOfTenant, boolean balcony, ArrayList<Tenant> tenant , boolean isAvailable, String rentPaymentDate) {
+    public Apartment(int id,int number, int area, int numOfRoom, int numOfBathrooms, double rent, int numOfTenant, boolean balcony, ArrayList<Tenant> tenant , boolean isAvailable, String rentPaymentDate , String photo , int floorNum) {
         this.id = number;
         this.number = number;
         this.area = area;
@@ -34,8 +36,25 @@ public class Apartment {
         this.tenant = tenant;
         this.isAvailable = isAvailable;
         this.rentPaymentDate =  rentPaymentDate;
+        this.photo = photo;
+        this.floorNum = floorNum;
     }
 
+    public int getFloorNum() {
+        return floorNum;
+    }
+
+    public void setFloorNum(int floorNum) {
+        this.floorNum = floorNum;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public int getId() {
         return id;
@@ -89,7 +108,7 @@ public class Apartment {
         this.numOfTenant = numOfTenant;
     }
 
-    public boolean isAvailable() {
+    public boolean getisAvailable() {
         return isAvailable;
     }
 
@@ -124,7 +143,7 @@ public class Apartment {
     public void isAvailableToRent() {
         if (tenant.size()< numOfTenant) {
             isAvailable = true;
-        }else isAvailable=false;
+        }else isAvailable = false;
     }
     public void displayInfo() {
         String  balconyFlag, isAvailableFlag ;
@@ -138,7 +157,7 @@ public class Apartment {
         }else isAvailableFlag = "is not available to rent.. ";
        logger.info("Apartment " + number + "\n" + NumOfRoom + " Room \n" + NumOfBathrooms + " Bathrooms \n"
                 + area + " sq. ft.\nRent: $" + rent + " per month \n" + balconyFlag+"\n" + numOfTenant+" Number of tenant \n" +
-               isAvailableFlag +"\nRent Payment Date: " + rentPaymentDate + "\n");
+               isAvailableFlag +"\nRent Payment Date: " + rentPaymentDate + "\n" +"Photo: "+photo+"\n"+"Floor Number: "+floorNum+"\n");
 
 
         if (tenant.size() != 0) {
