@@ -70,11 +70,5 @@ public class HouseDB {
             displayHouse(h);
         }
     }
-    public static void UpdateHouses(List<House> houses){
-        for(House h:houses)
-        {
-            displayHouse(h);
-        }
 
-    }
 }

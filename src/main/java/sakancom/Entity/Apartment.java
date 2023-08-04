@@ -108,7 +108,7 @@ public class Apartment {
         this.numOfTenant = numOfTenant;
     }
 
-    public boolean isAvailable() {
+    public boolean getisAvailable() {
         return isAvailable;
     }
 
@@ -143,7 +143,7 @@ public class Apartment {
     public void isAvailableToRent() {
         if (tenant.size()< numOfTenant) {
             isAvailable = true;
-        }else isAvailable=false;
+        }else isAvailable = false;
     }
     public void displayInfo() {
         String  balconyFlag, isAvailableFlag ;

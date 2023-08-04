@@ -22,13 +22,13 @@ public class House extends LoginToMyAppAsOwner {
 
    }
 
-   public House(int id, String location, List<String> services, HousingOwners owner, String hasFurnitureWindow, int totalApartments, ArrayList<Apartment> apartments,String photo ,int numOfFloor) {
+   public House(int id, String location, List<String> services, HousingOwners owner, int totalApartments, ArrayList<Apartment> apartments,String photo ,int numOfFloor) {
 
       this.id = id;
       this.location = location;
       this.services = services;
       this.owner = owner;
-      this.hasFurnitureWindow = hasFurnitureWindow;
+
       this.totalApartments = totalApartments;
       this.apartments = apartments;
       this.photo = photo;

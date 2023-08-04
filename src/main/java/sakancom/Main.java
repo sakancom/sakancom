@@ -222,7 +222,7 @@ public class Main {
 
                             logger.info("--Add Photo:");
                             String photo = in.next();
-                            newHouse.setHasFurnitureWindow(photo);
+                            newHouse.setPhoto(photo);
 
                              logger.info("--The Number of Floors:");
                              int numFloor = in.nextInt();
