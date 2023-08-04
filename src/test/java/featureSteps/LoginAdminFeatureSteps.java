@@ -2,12 +2,16 @@ package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import sakancom.LoggerUtility;
 import sakancom.serveses.LoginToMyAppAsAdmin;
+
+import java.util.logging.Logger;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LoginAdminFeatureSteps {
+    private static final Logger logger = LoggerUtility.getLogger();
     LoginToMyAppAsAdmin myApp;
     String password,email;
     public LoginAdminFeatureSteps()
@@ -35,6 +39,7 @@ public class LoginAdminFeatureSteps {
     public void theAdminIsLoggedInTheAppSuccessfully() {
         myApp.loggInCheck(email,password);
         assertTrue(myApp.isLoggedIn());
+        logger.info("the admin is logged in the app successfully\n\n");
 
     }
     @Then("the admin will not login")

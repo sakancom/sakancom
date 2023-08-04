@@ -41,7 +41,7 @@ public class TenantDB {
     public static void displayTenants(List<Tenant> tenants) {
         logger.info("-------------------------------Tenant----------------------------\n");
         logger.info("|     id     |"+"    Name     |"+"    Phone    " +
-                " |"+"       Age       |"+"    University Major     |"+"     Has furniture     |");
+                " |"+"       Age       |"+"    University Major     |"+"     Has furniture     \n|");
         for(Tenant t:tenants)
         {
             displayTenant(t);

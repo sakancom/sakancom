@@ -34,7 +34,7 @@ public class OwnerDB {
         if (owner == null) {
             logger.warning("This owner is not exist\n");
         } else {
-            String ownerInfo = String.format("|%20s|", owner.getId()) + String.format("%20s|", owner.getName()) +
+            String ownerInfo = String.format("|%20s", owner.getId()) + String.format("|%20s|", owner.getName()) +
                     String.format("%20s|", owner.getPhone())+String.format("%20s|", owner.getAddress())+
                     String.format("%20s|", owner.getEmail());
             logger.info(ownerInfo +"\n");
@@ -44,7 +44,7 @@ public class OwnerDB {
 
     public static void displayOwners(List<HousingOwners> owners) {
         logger.info("-------------------------------Owners-------------------------------\n");
-        logger.info("|     id     |"+"    Name     |"+"    Phone     |"+"     address     |"+"    email     |");
+        logger.info("|     id     |"+"    Name     |"+"    Phone     |"+"     address     |"+"    email     \n|");
         for(HousingOwners o:owners)
         {
             displayOwner(o);
