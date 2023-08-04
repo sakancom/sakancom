@@ -10,6 +10,7 @@ public class logoutFeatureSteps {
     public void that_the_user_choose_to_logout() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+
     }
     @When("the entered user id is exist")
     public void the_entered_user_id_is_exist() {
