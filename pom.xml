@@ -16,10 +16,10 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
+            <sonar.organization>sakancom</sonar.organization>
+
         <!-- SonarQube properties -->
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.organization>your_organization_key</sonar.organization>
-        <sonar.login>your_sonar_login_token</sonar.login>
     </properties>
 
     <!-- Dependencies -->
