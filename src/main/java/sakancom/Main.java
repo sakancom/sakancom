@@ -236,10 +236,10 @@ public class Main {
                                 newApartment.setArea(in.nextInt());
 
                                 logger.info("--the Number of Room :");
-                                newApartment.setNum_of_room(in.nextInt());
+                                newApartment.setNumofroom(in.nextInt());
 
                                 logger.info("--the Number of Bathrooms :");
-                                newApartment.setNum_of_bathrooms(in.nextInt());
+                                newApartment.setNumofbathrooms(in.nextInt());
 
                                 logger.info("--the Rent :");
                                 newApartment.setRent(in.nextInt());
