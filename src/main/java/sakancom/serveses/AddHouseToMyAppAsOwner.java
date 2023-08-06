@@ -14,4 +14,6 @@ public class AddHouseToMyAppAsOwner {
     public static void addHouseToRequestList(House h) {
         addHouse(h);
     }
-}
+    private AddHouseToMyAppAsOwner() {
+    }
+    }

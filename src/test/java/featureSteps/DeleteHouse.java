@@ -10,7 +10,7 @@ import sakancom.serveses.AppLogger;
 
 import java.util.logging.Logger;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class DeleteHouse {
     private static Logger logger = LoggerUtility.getLogger();
@@ -36,7 +36,7 @@ public class DeleteHouse {
     @Then("delete done")
     public void delete_done() {
       HouseDB.deleteHouse(0);
-      assertTrue(HouseDB.getHouses().size() == 0);
+        assertEquals(0, HouseDB.getHouses().size());
     }
 
 
@@ -53,7 +53,7 @@ public class DeleteHouse {
                 house = h;
             }
         }
-        assertTrue(house == null);
+        assertNull(house);
     }
     @Then("message appear to tell the them that is no house with this id")
     public void message_appear_to_tell_the_them_that_is_no_house_with_this_id() {

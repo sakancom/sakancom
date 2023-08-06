@@ -20,7 +20,6 @@ public class Main {
             logger.info("| 1-If you want to login as an admin                |\n");
             logger.info("| 2-If you want to login as an owner                |\n");
             logger.info("| 3-If you want to login as an tenant               |\n");
-            //logger.info("| 4-If you are a new owner enter number 4            |\n");
             logger.info("|___________________________________________________|\n");
     }
 
@@ -279,7 +278,7 @@ public class Main {
                              if (ownerHouses.isEmpty()) {
                                  logger.info("You have no houses!\n");
                              } else {
-                                 logger.info(String.format("--------%s's Houses --------\n ", owner.getName()));
+                                 logger.info(String.format("--------%s's Houses --------%n", owner.getName()));
                                  for(House h : HouseDB.getHouses()) {
                                      if (h.getOwner().getEmail().equals(owner.getEmail())) {
                                          HouseDB.displayHouse(h);
@@ -298,12 +297,12 @@ public class Main {
                                          logger.info("______________________________________________________________________\n");
                                       logger.warning("|Please Enter the House ID of the House you want to delete :)        |\n");
                                          logger.info("|____________________________________________________________________|\n");
-                                         int Housemaid = in.nextInt();
+                                         int housemaid = in.nextInt();
                                          boolean isHouseDeleted = false;
                                          Iterator<House> iterator = HouseDB.getHouses().iterator();
                                          while (iterator.hasNext()) {
                                              House house = iterator.next();
-                                             if (house.getId() == Housemaid && house.getOwner().getEmail().equals(email)) {
+                                             if (house.getId() == housemaid && house.getOwner().getEmail().equals(email)) {
                                                  iterator.remove();
                                                  isHouseDeleted = true;
                                                  break;
@@ -485,7 +484,7 @@ public class Main {
 /////////////////////////////////////////Tenant page//////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////Tenant Page//////////////////////////////////////////////////////////
             else if (option == 3) {
-                int HouseRentId =-1;
+                int houserentid =-1;
                 Tenant tenant = new Tenant();
                 LoginToMyAppAsTenant tenantApp = new LoginToMyAppAsTenant();
                 tenantApp.loggInCheck(email, password);
@@ -543,14 +542,14 @@ public class Main {
                                     display();
                                  logger.warning("|Please Enter the Id of the House you want to Rent       |\n");
                                     displaying();
-                                     HouseRentId = in.nextInt();
+                                     houserentid = in.nextInt();
                                     display();
                                  logger.warning("|Please Enter the Id of the Apartment you want to Rent   |\n");
                                     displaying();
 
                                     int number = in.nextInt();
                                     for(House h : HouseDB.getHouses()){
-                                        if(h.getId() == HouseRentId){
+                                        if(h.getId() == houserentid){
                                             for(Apartment a : h.getApartments()){
                                                 if(a.getNumber() == number){
                                                     a.rentApartment(tenant);
@@ -593,7 +592,7 @@ public class Main {
 
 
                         }else if(tenantOption == 4){
-                            if(HouseRentId ==-1){
+                            if(houserentid ==-1){
                                 logger.info("____________________________________________________________________\n");
                              logger.warning("|You haven't rented a house yet....                                |\n");
                                 logger.info("|__________________________________________________________________|\n");
@@ -601,7 +600,7 @@ public class Main {
 
                             }else {
                                 for (House h : HouseDB.getHouses()) {
-                                    if (h.getId() == HouseRentId) {
+                                    if (h.getId() == houserentid) {
                                         for (Apartment a : h.getApartments()) {
                                             for(Tenant t : a.getTenant()){
                                                 if(!(t.getEmail().equals(email)) ){
@@ -660,7 +659,7 @@ public class Main {
         logger.info("|____________________________________________________|\n");
     }
     public static void displayline(){
-        logger.info("|____________________________________________________|\n");
+        logger.info(" ____________________________________________________ \n");
     }
 
 }

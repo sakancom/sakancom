@@ -11,6 +11,7 @@ import sakancom.serveses.LoginToMyAppAsAdmin;
 
 import java.util.logging.Logger;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static sakancom.database.RequestToAddHouseDB.*;
 
@@ -49,11 +50,11 @@ public class addHouseFeatureSteps {
     @Then("the requests list will be empty")
     public void theRequestsListWillBeEmpty() {
       //  clearTheRequestList();
-        assertTrue(getHouses().size() == 0);
+        assertEquals(0, getHouses().size());
     }
     @Given("request list dosn't have houses to rent")
     public void requestListDosnTHaveHousesToRent() {
-        assertTrue(getHouses().size() == 0);
+        assertEquals(0, getHouses().size());
 
     }
     @Then("the message appear to tell the admin that request list empty")

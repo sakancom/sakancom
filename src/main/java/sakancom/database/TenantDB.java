@@ -37,7 +37,7 @@ public class TenantDB {
                     String.format("|%17s", tenant.getUniversityMajors()) +
                     String.format("|%30s", tenant.getFurniture()) + "|\n";
 
-            logger.info(tenantInfo + "\n");
+            logger.info(tenantInfo);
         }
     }
     public static void displayTenants(List<Tenant> tenants) {

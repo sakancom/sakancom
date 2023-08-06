@@ -15,14 +15,15 @@ public class House extends LoginToMyAppAsOwner {
    private HousingOwners owner;
    private String hasFurnitureWindow;
    private int totalApartments;
-   private ArrayList<Apartment> apartments;
+   private List<Apartment> apartments;
    private String photo;
    private int numOfFloor;
    public House() {
 
    }
 
-   public House(int id, String location, List<String> services, HousingOwners owner, int totalApartments, ArrayList<Apartment> apartments,String photo ,int numOfFloor) {
+   public House(int id, String location, List<String> services, HousingOwners owner, int totalApartments,
+                List<Apartment> apartments, String photo, int numOfFloor) {
 
       this.id = id;
       this.location = location;
@@ -99,7 +100,7 @@ public class House extends LoginToMyAppAsOwner {
       this.totalApartments = totalApartments;
    }
 
-   public ArrayList<Apartment> getApartments() {
+   public List<Apartment> getApartments() {
       return apartments;
    }
 

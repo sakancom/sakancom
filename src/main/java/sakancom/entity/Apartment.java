@@ -3,6 +3,7 @@ package sakancom.entity;
 import sakancom.LoggerUtility;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class Apartment {
@@ -10,13 +11,13 @@ public class Apartment {
     private int id;
     private int number;
     private int area;
-    private int num_of_room;
-    private int num_of_bathrooms;
+    private int numofroom;
+    private int numofbathrooms;
     private double rent;
     private int numOfTenant;
     private boolean isAvailable;
     private boolean balcony;
-    private ArrayList<Tenant> tenant;
+    private List<Tenant> tenant;
     private String rentPaymentDate;
     private String photo;
     private int floorNum;
@@ -25,13 +26,13 @@ public class Apartment {
     }
 
     public Apartment(int id, int number, int area, int numOfRoom, int numOfBathrooms, double rent,
-                     int numOfTenant, boolean balcony, ArrayList<Tenant> tenant, boolean isAvailable,
+                     int numOfTenant, boolean balcony, List<Tenant> tenant, boolean isAvailable,
                      String rentPaymentDate, String photo, int floorNum) {
         this.id = id;
         this.number = number;
         this.area = area;
-        this.num_of_room = numOfRoom;
-        this.num_of_bathrooms = numOfBathrooms;
+        this.numofroom = numOfRoom;
+        this.numofbathrooms = numOfBathrooms;
         this.rent = rent;
         this.numOfTenant = numOfTenant;
         this.balcony = balcony;
@@ -66,20 +67,21 @@ public class Apartment {
         this.area = area;
     }
 
-    public int getNum_of_room() {
-        return num_of_room;
+
+    public int getNumofroom() {
+        return numofroom;
     }
 
-    public void setNum_of_room(int num_of_room) {
-        this.num_of_room = num_of_room;
+    public void setNumofroom(int numofroom) {
+        this.numofroom = numofroom;
     }
 
-    public int getNum_of_bathrooms() {
-        return num_of_bathrooms;
+    public int getNumofbathrooms() {
+        return numofbathrooms;
     }
 
-    public void setNum_of_bathrooms(int num_of_bathrooms) {
-        this.num_of_bathrooms = num_of_bathrooms;
+    public void setNumofbathrooms(int numofbathrooms) {
+        this.numofbathrooms = numofbathrooms;
     }
 
     public double getRent() {
@@ -114,7 +116,7 @@ public class Apartment {
         this.balcony = balcony;
     }
 
-    public ArrayList<Tenant> getTenant() {
+    public List<Tenant> getTenant() {
         return tenant;
     }
 
@@ -155,7 +157,7 @@ public class Apartment {
         String balconyFlag = balcony ? "has a balcony" : "doesn't have a balcony";
         String isAvailableFlag = isAvailable ? "is available to rent" : "is not available to rent";
 
-        logger.info("Apartment " + number + "\n" + num_of_room + " Room(s)\n" + num_of_bathrooms + " Bathroom(s)\n"
+        logger.info("Apartment " + number + "\n" + numofroom + " Room(s)\n" + numofbathrooms + " Bathroom(s)\n"
                 + area + " sq. ft.\nRent: $" + rent + " per month\n" + balconyFlag + "\n" + numOfTenant + " Number of tenant(s)\n" +
                 isAvailableFlag + "\nRent Payment Date: " + rentPaymentDate + "\n" + "Photo: " + photo + "\n" + "Floor Number: " + floorNum + "\n");
 

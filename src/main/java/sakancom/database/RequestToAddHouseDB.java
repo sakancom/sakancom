@@ -32,14 +32,14 @@ public class RequestToAddHouseDB {
                 + house.getLocation() + "\n" + "the services: " + house.getServices() + "\n" + "has Furniture Window: "
                 + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n"+ "Photo: " + house.getPhoto() + "\n"+ "the number of floor: " + house.getNumOfFloor() + "\n");
 
-        logger.info("------------------------\n");
+        display();
         logger.info("Apartments in this house:\n");
         for (Apartment apartment : house.getApartments()) {
-        logger.info("------------------------\n");
+            display();
             logger.info("Apartment Number: " + apartment.getNumber() + "\n"
                     + "Area: " + apartment.getArea() + "\n"
-                    + "Number of Rooms: " + apartment.getNumOfRoom() + "\n"
-                    + "Number of Bathrooms: " + apartment.getNumOfBathrooms() + "\n"
+                    + "Number of Rooms: " + apartment.getNum_of_room() + "\n"
+                    + "Number of Bathrooms: " + apartment.getNum_of_bathrooms()+ "\n"
                     //+ "Number of Bedrooms: " + apartment.getNumOfBedrooms() + "\n"
                     + "Rent: " + apartment.getRent() + "\n"
                     + "Total Number of Tenants: " + apartment.getNumOfTenant() + "\n"
@@ -48,7 +48,7 @@ public class RequestToAddHouseDB {
                     + "Photo: " + apartment.getPhoto() + "\n"
                     + "Floor's Number: " + apartment.getFloorNum()+ "\n");
 
-            logger.info("------------------------\n");
+            display();
         }
 
     }
@@ -68,5 +68,8 @@ public class RequestToAddHouseDB {
 
     public static void cancelRequest(int id ){
         houses.removeIf(h -> h.getId() == id);
+    }
+    public static void display(){
+        logger.info("------------------------\n");
     }
 }

@@ -22,8 +22,8 @@ public class LoggerUtility {
         // Set a custom format for SimpleFormatter without timestamp
         SimpleFormatter simpleFormatter = new SimpleFormatter() {
             @Override
-            public synchronized String format(LogRecord record) {
-                return record.getMessage() ;
+            public synchronized String format(LogRecord logRecord) {
+                return logRecord.getMessage() ;
             }
         };
 

@@ -40,12 +40,10 @@ public class Tenant {
     }
 
     public void setFurniture(List<String> furniture) {
-        if(furniture.size()>0)
-            setHasFurnitureWindow(true);
-        else
-            setHasFurnitureWindow(false);
+        setHasFurnitureWindow(furniture.size() > 0);
         this.furniture = furniture;
     }
+
 
     public String getPassword() {
         return password;
