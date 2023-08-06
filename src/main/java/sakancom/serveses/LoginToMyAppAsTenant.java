@@ -39,10 +39,4 @@ public class LoginToMyAppAsTenant {
             }
         }
     }
-    public boolean emptyPassOrEmail (String email, String password){
-        return email.equals(" ") || password.equals(" ");
-    }
-
-
-
 }

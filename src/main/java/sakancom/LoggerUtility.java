@@ -4,8 +4,6 @@ import java.util.logging.*;
 
 public class LoggerUtility {
     private static Logger logger;
-
-    // Private constructor to prevent instantiation
     private LoggerUtility() {}
 
     public static Logger getLogger() {
@@ -15,15 +13,12 @@ public class LoggerUtility {
         }
         return logger;
     }
-
     private static void setupLogger() {
         logger.setUseParentHandlers(false);
-
-        // Set a custom format for SimpleFormatter without timestamp
         SimpleFormatter simpleFormatter = new SimpleFormatter() {
             @Override
             public synchronized String format(LogRecord logRecord) {
-                return logRecord.getMessage() ;
+                return logRecord.getMessage();
             }
         };
 

@@ -1,14 +1,10 @@
 package sakancom.serveses;
-
-import sakancom.LoggerUtility;
-
-import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static java.util.logging.Level.INFO;
 
 
 public class AppLogger {
-    private static final Logger logger = LoggerUtility.getLogger();
-
     private AppLogger() {
         throw new IllegalStateException("Utility class");
     }
@@ -19,7 +15,7 @@ public class AppLogger {
         setlevelLogger(logger);
     }
     private static void setlevelLogger(Logger logger) {
-        logger.setLevel(Level.INFO);
+        logger.setLevel(INFO);
     }
 
 }
