@@ -38,8 +38,8 @@ public class RequestToAddHouseDB {
             display();
             logger.info("Apartment Number: " + apartment.getNumber() + "\n"
                     + "Area: " + apartment.getArea() + "\n"
-                    + "Number of Rooms: " + apartment.getNum_of_room() + "\n"
-                    + "Number of Bathrooms: " + apartment.getNum_of_bathrooms()+ "\n"
+                    + "Number of Rooms: " + apartment.getNumofroom() + "\n"
+                    + "Number of Bathrooms: " + apartment.getNumofbathrooms()+ "\n"
                     //+ "Number of Bedrooms: " + apartment.getNumOfBedrooms() + "\n"
                     + "Rent: " + apartment.getRent() + "\n"
                     + "Total Number of Tenants: " + apartment.getNumOfTenant() + "\n"
