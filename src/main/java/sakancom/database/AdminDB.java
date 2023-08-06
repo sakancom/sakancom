@@ -1,6 +1,6 @@
-package sakancom.Database;
+package sakancom.database;
 
-import sakancom.Entity.Admin;
+import sakancom.entity.Admin;
 import sakancom.LoggerUtility;
 
 import java.util.ArrayList;

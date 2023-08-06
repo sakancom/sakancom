@@ -2,8 +2,8 @@ package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import sakancom.Database.HouseDB;
-import sakancom.Entity.House;
+import sakancom.database.HouseDB;
+import sakancom.entity.House;
 import sakancom.LoggerUtility;
 import sakancom.serveses.AddHouseToMyAppAsOwner;
 import sakancom.serveses.AppLogger;
@@ -12,7 +12,7 @@ import sakancom.serveses.LoginToMyAppAsAdmin;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.assertTrue;
-import static sakancom.Database.RequestToAddHouseDB.*;
+import static sakancom.database.RequestToAddHouseDB.*;
 
 public class addHouseFeatureSteps {
     LoginToMyAppAsAdmin myApp ;

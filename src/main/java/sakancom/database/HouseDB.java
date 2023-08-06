@@ -1,7 +1,7 @@
-package sakancom.Database;
+package sakancom.database;
 
-import sakancom.Entity.Apartment;
-import sakancom.Entity.House;
+import sakancom.entity.Apartment;
+import sakancom.entity.House;
 import sakancom.LoggerUtility;
 
 
@@ -10,17 +10,13 @@ import java.util.List;
 import java.util.logging.*;
 
 public class HouseDB {
-    private static List <House> houses=new ArrayList<House>();
+    private static final List <House> houses=new ArrayList<House>();
     private static final Logger logger = LoggerUtility.getLogger();
 
     private HouseDB() {
         throw new IllegalStateException("Utility class");
     }
 
-//    static{
-//         AppLogger.setLevel(logger);
-//         houses.add(new House(1, "Nablus", 4, 2, 200, 1000, "Nablus",  new ArrayList<>(List.of("Wifi", " Parking", "Garden")),true,null,  new ArrayList<>(),true, "every month"));
-//    }
     public static void addHouse( House h) {
         houses.add(h);
     }
@@ -35,7 +31,7 @@ public class HouseDB {
     public static void displayHouse(House house) {
         if(house==null)
         {
-            logger.info("------------------------------------------------------------\n");
+            displaying();
          logger.warning("|This house is not exist                                   |\n");
             logger.info("|__________________________________________________________|\n");
         }
@@ -43,10 +39,10 @@ public class HouseDB {
             logger.info("id: " + house.getId() + "\n" + "the Owner:  " +house.getOwner().getName()+ "\n" + "the location: "
                     + house.getLocation() + "\n" + "the services: " + house.getServices() + "\n" + "has Furniture Window: "
                     + house.getHasFurnitureWindow() + "\n" + "the number of Apartments: " + house.getTotalApartments() + "\n"+"Photo: " + house.getPhoto() + "\n" + "the number of Floor: " + house.getNumOfFloor()+ "\n");
-        logger.info("------------------------------------------------------------\n");
+        displaying();
         logger.info("|Apartments in this house:\n");
-        logger.info("------------------------------------------------------------\n");
-        if(house.getApartments() != null){
+        displaying();
+        if (house != null && house.getApartments() != null){
         for (Apartment apartment : house.getApartments()) {
             logger.info("Apartment Number: " + apartment.getNumber() + "\n"
                     + "Area: " + apartment.getArea() + "\n"
@@ -61,7 +57,7 @@ public class HouseDB {
                     + "Floor Number: " + apartment.getFloorNum() + "\n");
 
 
-            logger.info("------------------------------------------------------------\n");
+            displaying();
         }
         }
 
@@ -73,6 +69,9 @@ public class HouseDB {
             displayHouse(h);
         }
     }
+    }
+    public static void displaying(){
+        logger.info("------------------------------------------------------------\n");
     }
 
 }

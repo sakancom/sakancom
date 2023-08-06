@@ -1,15 +1,12 @@
-package sakancom.Database;
-
-import sakancom.Entity.HousingOwners;
-import sakancom.Entity.Tenant;
+package sakancom.database;
+import sakancom.entity.Tenant;
 import sakancom.LoggerUtility;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class TenantDB {
-    private static Logger logger = LoggerUtility.getLogger();
+    private static final Logger logger = LoggerUtility.getLogger();
     static List<Tenant> tenants= new ArrayList<Tenant>();
     private TenantDB() {
 
@@ -32,9 +29,10 @@ public class TenantDB {
             logger.warning("This tenant is not exist");
         }
         else{
+            String spaces = "|%12s";
             String tenantInfo = String.format("|%12s", tenant.getId()) +
-                    String.format("|%12s", tenant.getName()) +
-                    String.format("|%12s", tenant.getPhone()) +
+                    String.format(spaces, tenant.getName()) +
+                    String.format(spaces, tenant.getPhone()) +
                     String.format("|%10s", tenant.getAge()) +
                     String.format("|%17s", tenant.getUniversityMajors()) +
                     String.format("|%30s", tenant.getFurniture()) + "|\n";

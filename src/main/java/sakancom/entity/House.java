@@ -1,4 +1,4 @@
-package sakancom.Entity;
+package sakancom.entity;
 
 import sakancom.serveses.LoginToMyAppAsOwner;
 

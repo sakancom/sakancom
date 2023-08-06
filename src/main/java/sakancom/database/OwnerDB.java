@@ -1,10 +1,7 @@
-package sakancom.Database;
+package sakancom.database;
 
-import sakancom.Entity.Admin;
-import sakancom.Entity.House;
-import sakancom.Entity.HousingOwners;
+import sakancom.entity.HousingOwners;
 import sakancom.LoggerUtility;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -34,11 +31,12 @@ public class OwnerDB {
         if (owner == null) {
             logger.warning("This owner is not exist\n");
         } else {
+            String spaces = "|%12s";
             String ownerInfo = String.format("|%12s", owner.getId()) +
-                    String.format("|%12s", owner.getName()) +
-                    String.format("|%12s", owner.getPhone()) +
+                    String.format(spaces, owner.getName()) +
+                    String.format(spaces, owner.getPhone()) +
                     String.format("|%14s", owner.getAddress()) +
-                    String.format("|%12s", owner.getEmail()) + "|\n";
+                    String.format(spaces, owner.getEmail()) + "|\n";
 
             logger.info(ownerInfo);
 

@@ -1,4 +1,4 @@
-package sakancom.Entity;
+package sakancom.entity;
 
 public class HousingOwners {
     private String password ;

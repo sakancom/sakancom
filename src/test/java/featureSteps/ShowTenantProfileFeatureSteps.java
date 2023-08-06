@@ -3,18 +3,12 @@ package featureSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import sakancom.Database.TenantDB;
-import sakancom.Entity.HousingOwners;
-import sakancom.Entity.Tenant;
-import sakancom.LoggerUtility;
-import sakancom.serveses.AppLogger;
-import sakancom.serveses.LoginToMyAppAsAdmin;
-import sakancom.serveses.LoginToMyAppAsOwner;
+import sakancom.database.TenantDB;
+import sakancom.entity.Tenant;
 import sakancom.serveses.LoginToMyAppAsTenant;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import static org.junit.Assert.assertTrue;
 

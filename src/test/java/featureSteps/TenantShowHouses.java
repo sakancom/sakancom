@@ -2,7 +2,7 @@ package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import sakancom.Database.HouseDB;
+import sakancom.database.HouseDB;
 import sakancom.serveses.LoginToMyAppAsTenant;
 
 import static org.junit.Assert.assertTrue;

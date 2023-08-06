@@ -1,7 +1,7 @@
 package sakancom.serveses;
 
-import sakancom.Database.OwnerDB;
-import sakancom.Entity.HousingOwners;
+import sakancom.database.OwnerDB;
+import sakancom.entity.HousingOwners;
 import sakancom.LoggerUtility;
 
 

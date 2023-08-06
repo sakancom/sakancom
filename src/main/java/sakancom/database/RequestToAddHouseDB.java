@@ -1,12 +1,10 @@
-package sakancom.Database;
+package sakancom.database;
 
 
-import sakancom.Entity.House;
+import sakancom.entity.House;
 import sakancom.LoggerUtility;
-import sakancom.serveses.AppLogger;
-import sakancom.Entity.HousingOwners;
-import sakancom.Entity.Apartment;
-
+import sakancom.entity.HousingOwners;
+import sakancom.entity.Apartment;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;

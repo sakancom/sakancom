@@ -1,17 +1,11 @@
 package sakancom;
-        import sakancom.Database.*;
-        import sakancom.Entity.*;
-        import sakancom.serveses.AddHouseToMyAppAsOwner;
+        import sakancom.database.*;
+        import sakancom.entity.*;
         import sakancom.serveses.LoginToMyAppAsAdmin;
-
         import java.util.*;
         import java.util.logging.Logger;
-        import java.io.File;
-        import java.util.logging.*;
-
-        import sakancom.Entity.House;
+        import sakancom.entity.House;
         import sakancom.serveses.LoginToMyAppAsOwner;
-        import sakancom.LoggerUtility;
         import sakancom.serveses.LoginToMyAppAsTenant;
 
 public class Main {
@@ -30,7 +24,7 @@ public class Main {
             logger.info("|___________________________________________________|\n");
     }
 
-    public static void main(String[]args) throws InterruptedException {
+    public static void main(String[]args) {
         Scanner in = new Scanner(System.in);
         int option = 0;
         String email;
@@ -262,11 +256,7 @@ public class Main {
                                 String balcony = in.next();
 
 
-                                if(balcony.equalsIgnoreCase("yse")){
-                                    newApartment.setBalcony(true);
-                                }else {
-                                    newApartment.setBalcony(false);
-                                }
+                                newApartment.setBalcony(balcony.equalsIgnoreCase("yse"));
                                 logger.info("--The Floor's Number ");
                                 newApartment.setFloorNum(in.nextInt());
 
@@ -312,12 +302,12 @@ public class Main {
                                          logger.info("______________________________________________________________________\n");
                                       logger.warning("|Please Enter the House ID of the House you want to delete :)        |\n");
                                          logger.info("|____________________________________________________________________|\n");
-                                         int Houseid = in.nextInt();
+                                         int Housemaid = in.nextInt();
                                          boolean isHouseDeleted = false;
                                          Iterator<House> iterator = HouseDB.getHouses().iterator();
                                          while (iterator.hasNext()) {
                                              House house = iterator.next();
-                                             if (house.getId() == Houseid && house.getOwner().getEmail().equals(email)) {
+                                             if (house.getId() == Housemaid && house.getOwner().getEmail().equals(email)) {
                                                  iterator.remove();
                                                  isHouseDeleted = true;
                                                  break;

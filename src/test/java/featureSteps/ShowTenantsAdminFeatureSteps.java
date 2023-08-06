@@ -2,9 +2,8 @@ package featureSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import sakancom.Database.OwnerDB;
-import sakancom.Database.TenantDB;
-import sakancom.Entity.House;
+import sakancom.database.TenantDB;
+import sakancom.entity.House;
 import sakancom.LoggerUtility;
 import sakancom.serveses.AppLogger;
 import sakancom.serveses.LoginToMyAppAsAdmin;

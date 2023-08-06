@@ -3,11 +3,10 @@ package featureSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import sakancom.Database.HouseDB;
-import sakancom.Entity.House;
+import sakancom.database.HouseDB;
+import sakancom.entity.House;
 import sakancom.LoggerUtility;
 import sakancom.serveses.AppLogger;
-import sakancom.serveses.LoginToMyAppAsAdmin;
 
 import java.util.logging.Logger;
 

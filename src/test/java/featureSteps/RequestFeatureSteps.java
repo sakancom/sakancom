@@ -3,10 +3,10 @@ package featureSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import sakancom.Database.RequestToAddHouseDB;
-import sakancom.Entity.Apartment;
-import sakancom.Entity.House;
-import sakancom.Entity.HousingOwners;
+import sakancom.database.RequestToAddHouseDB;
+import sakancom.entity.Apartment;
+import sakancom.entity.House;
+import sakancom.entity.HousingOwners;
 import sakancom.serveses.LoginToMyAppAsOwner;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package sakancom.Entity;
+package sakancom.entity;
 
 public class Admin {
     private String password ;
@@ -15,6 +15,4 @@ public class Admin {
         return password;
     }
 
-    public void adminPage() {
-    }
 }

@@ -1,7 +1,7 @@
 package sakancom.serveses;
 
-import sakancom.Database.TenantDB;
-import sakancom.Entity.Tenant;
+import sakancom.database.TenantDB;
+import sakancom.entity.Tenant;
 import sakancom.LoggerUtility;
 
 import java.util.logging.Logger;

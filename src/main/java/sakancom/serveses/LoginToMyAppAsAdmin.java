@@ -1,7 +1,7 @@
 package sakancom.serveses;
 
-import sakancom.Database.AdminDB;
-import sakancom.Entity.Admin;
+import sakancom.database.AdminDB;
+import sakancom.entity.Admin;
 import sakancom.LoggerUtility;
 
 import java.util.logging.Logger;
