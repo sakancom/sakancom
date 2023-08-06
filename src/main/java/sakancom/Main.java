@@ -1,12 +1,13 @@
 package sakancom;
-        import sakancom.database.*;
-        import sakancom.entity.*;
-        import sakancom.serveses.LoginToMyAppAsAdmin;
-        import java.util.*;
-        import java.util.logging.Logger;
-        import sakancom.entity.House;
-        import sakancom.serveses.LoginToMyAppAsOwner;
-        import sakancom.serveses.LoginToMyAppAsTenant;
+
+import sakancom.database.*;
+import sakancom.entity.*;
+import sakancom.serveses.LoginToMyAppAsAdmin;
+import sakancom.serveses.LoginToMyAppAsOwner;
+import sakancom.serveses.LoginToMyAppAsTenant;
+
+import java.util.*;
+import java.util.logging.Logger;
 
 public class Main {
     private static final Logger logger = LoggerUtility.getLogger();
