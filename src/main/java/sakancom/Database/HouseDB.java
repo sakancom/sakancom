@@ -46,6 +46,7 @@ public class HouseDB {
         logger.info("------------------------------------------------------------\n");
         logger.info("|Apartments in this house:\n");
         logger.info("------------------------------------------------------------\n");
+        if(house.getApartments() != null){
         for (Apartment apartment : house.getApartments()) {
             logger.info("Apartment Number: " + apartment.getNumber() + "\n"
                     + "Area: " + apartment.getArea() + "\n"
@@ -62,13 +63,16 @@ public class HouseDB {
 
             logger.info("------------------------------------------------------------\n");
         }
+        }
 
     }
     public static void displayHouses(List<House> houses) {
+        if(houses != null){
         for(House h:houses)
         {
             displayHouse(h);
         }
+    }
     }
 
 }
