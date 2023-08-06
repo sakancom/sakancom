@@ -5,14 +5,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import sakancom.Database.OwnerDB;
 import sakancom.Entity.HousingOwners;
+import sakancom.LoggerUtility;
 import sakancom.serveses.LoginToMyAppAsOwner;
+
+import java.util.logging.Logger;
 
 import static org.junit.Assert.assertTrue;
 
 public class ShowOwnerProfile {
     LoginToMyAppAsOwner myApp;
     HousingOwners owner;
-
+    private static Logger logger = LoggerUtility.getLogger();
     public ShowOwnerProfile() {
         myApp = new LoginToMyAppAsOwner();
         myApp.login();
@@ -21,6 +24,7 @@ public class ShowOwnerProfile {
     @Given("that the owner is log in")
     public void that_the_owner_is_log_in() {
         assertTrue(myApp.isLoggedIn());
+        logger.info("\n");
     }
 
 

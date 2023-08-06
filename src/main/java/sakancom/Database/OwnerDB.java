@@ -34,17 +34,21 @@ public class OwnerDB {
         if (owner == null) {
             logger.warning("This owner is not exist\n");
         } else {
-            String ownerInfo = String.format("|%20s", owner.getId()) + String.format("|%20s|", owner.getName()) +
-                    String.format("%20s|", owner.getPhone())+String.format("%20s|", owner.getAddress())+
-                    String.format("%20s|", owner.getEmail());
-            logger.info(ownerInfo +"\n");
+            String ownerInfo = String.format("|%12s", owner.getId()) +
+                    String.format("|%12s", owner.getName()) +
+                    String.format("|%12s", owner.getPhone()) +
+                    String.format("|%14s", owner.getAddress()) +
+                    String.format("|%12s", owner.getEmail()) + "|\n";
+
+            logger.info(ownerInfo);
 
         }
     }
 
     public static void displayOwners(List<HousingOwners> owners) {
-        logger.info("-------------------------------Owners-------------------------------\n");
-        logger.info("|     id     |"+"    Name     |"+"    Phone     |"+"     address     |"+"    email     \n|");
+        logger.info("----------------------------------Owners----------------------------\n");
+        logger.info("|     id     |    Name    |    Phone   |    Address   |    Email   |\n");
+
         for(HousingOwners o:owners)
         {
             displayOwner(o);

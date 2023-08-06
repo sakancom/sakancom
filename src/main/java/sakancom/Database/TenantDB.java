@@ -32,16 +32,19 @@ public class TenantDB {
             logger.warning("This tenant is not exist");
         }
         else{
-            String tenantInfo = String.format("|%19s|", tenant.getId()) + String.format("%15s|", tenant.getName()) +
-                    String.format("%13s|", tenant.getPhone())+String.format("%s10|", tenant.getAge())+
-                    String.format("%25s|", tenant.getUniversityMajors())+String.format("%25s|", tenant.getFurniture());
-            logger.info(tenantInfo+"\n");
+            String tenantInfo = String.format("|%12s", tenant.getId()) +
+                    String.format("|%12s", tenant.getName()) +
+                    String.format("|%12s", tenant.getPhone()) +
+                    String.format("|%10s", tenant.getAge()) +
+                    String.format("|%17s", tenant.getUniversityMajors()) +
+                    String.format("|%30s", tenant.getFurniture()) + "|\n";
+
+            logger.info(tenantInfo + "\n");
         }
     }
     public static void displayTenants(List<Tenant> tenants) {
-        logger.info("-------------------------------Tenant----------------------------\n");
-        logger.info("|     id     |"+"    Name     |"+"    Phone    " +
-                " |"+"       Age       |"+"    University Major     |"+"     Has furniture     \n|");
+        logger.info("-------------------------------------------------Tenant---------------------------------------------\n");
+        logger.info("|     id     |    Name    |    Phone   |     Age  | University Major|         Has Furniture        |\n");
         for(Tenant t:tenants)
         {
             displayTenant(t);

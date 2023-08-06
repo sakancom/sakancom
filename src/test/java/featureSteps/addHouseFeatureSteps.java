@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import sakancom.Database.HouseDB;
 import sakancom.Entity.House;
+import sakancom.LoggerUtility;
 import sakancom.serveses.AddHouseToMyAppAsOwner;
 import sakancom.serveses.AppLogger;
 import sakancom.serveses.LoginToMyAppAsAdmin;
@@ -16,7 +17,7 @@ import static sakancom.Database.RequestToAddHouseDB.*;
 public class addHouseFeatureSteps {
     LoginToMyAppAsAdmin myApp ;
     House house;
-    private static final Logger logger = Logger.getLogger(LoginToMyAppAsAdmin.class.getName());
+    private static Logger logger = LoggerUtility.getLogger();
 
     public addHouseFeatureSteps()
 

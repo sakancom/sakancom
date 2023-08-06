@@ -11,7 +11,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LoginAdminFeatureSteps {
-    private static final Logger logger = LoggerUtility.getLogger();
+    private static Logger logger = LoggerUtility.getLogger();
     LoginToMyAppAsAdmin myApp;
     String password,email;
     public LoginAdminFeatureSteps()
@@ -27,30 +27,27 @@ public class LoginAdminFeatureSteps {
     }
     @Given("the username is {string}")
     public void theUsernameIs(String email) {
-
         this.email = email;
     }
     @Given("the password is {string}")
     public void thePasswordIs(String password) {
-
         this.password = password;
     }
     @Then("the admin is logged in the app successfully")
     public void theAdminIsLoggedInTheAppSuccessfully() {
         myApp.loggInCheck(email,password);
         assertTrue(myApp.isLoggedIn());
-        logger.info("the admin is logged in the app successfully\n\n");
 
     }
     @Then("the admin will not login")
     public void theAdminWillNotLogin() {
         myApp.loggInCheck(email,password);
         assertFalse(myApp.isLoggedIn());
+        logger.info("\n");
 
     }
     @Then("the message appear to tell the admin what's wrong")
     public void theMessageAppearToTellTheAdminWhatSWrong() {
-
         myApp.errorInLogin();
     }
 
