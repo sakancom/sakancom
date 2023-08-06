@@ -146,8 +146,9 @@ public class Apartment {
         this.floorNum = floorNum;
     }
 
-    public void isAvailableToRent() {
+    public boolean isAvailableToRent() {
         isAvailable = tenant.size() < numOfTenant;
+        return false;
     }
 
     public void displayInfo() {

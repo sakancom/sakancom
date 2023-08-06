@@ -49,7 +49,7 @@ public class RentFeatureSteps {
     }
     @Given("this apartment is available")
     public void this_apartment_is_available() {
-        assertTrue(a.getisAvailable());
+        assertTrue(a.isAvailableToRent());
 
     }
     @Then("the tenant rent it")
@@ -61,7 +61,7 @@ public class RentFeatureSteps {
     @Given("this apartment is not available")
     public void this_apartment_is_not_available() {
         a.setAvailable(false);
-        assertFalse(a.getisAvailable());
+        assertFalse(a.isAvailableToRent());
 
     }
     @Then("the tenant cannot rent it")

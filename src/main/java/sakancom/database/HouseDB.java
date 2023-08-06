@@ -46,8 +46,8 @@ public class HouseDB {
         for (Apartment apartment : house.getApartments()) {
             logger.info("Apartment Number: " + apartment.getNumber() + "\n"
                     + "Area: " + apartment.getArea() + "\n"
-                    + "Number of Rooms: " + apartment.getNumOfRoom() + "\n"
-                    + "Number of Bathrooms: " + apartment.getNumOfBathrooms() + "\n"
+                    + "Number of Rooms: " + apartment.getNum_of_room() + "\n"
+                    + "Number of Bathrooms: " + apartment.getNum_of_bathrooms() + "\n"
                     //+ "Number of Bedrooms: " + apartment.getNumOfBedrooms() + "\n"
                     + "Rent: " + apartment.getRent() + "\n"
                     + "Total Number of Tenants: " + apartment.getNumOfTenant() + "\n"

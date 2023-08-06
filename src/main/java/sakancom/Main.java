@@ -9,7 +9,7 @@ package sakancom;
         import sakancom.serveses.LoginToMyAppAsTenant;
 
 public class Main {
-    private static Logger logger = LoggerUtility.getLogger();
+    private static final Logger logger = LoggerUtility.getLogger();
     static Apartment apartment = new Apartment();
     List<House> houses = HouseDB.getHouses();
     static Apartment newApartment = new Apartment();
@@ -44,7 +44,6 @@ public class Main {
             logger.info("____________________________________________________\n");
          logger.warning("|             WELCOME TO LOGIN PAGE                |\n");
             logger.info("|__________________________________________________|\n");
-           // logger.info("WELCOME TO LOGIN PAGE\n");
 
             logger.info("Enter your email:");
             email = in.next();
@@ -87,15 +86,15 @@ public class Main {
                                    optionadmin = in.nextInt();
                                    //cancel
                                    if (optionadmin == 1) {
-                                       logger.info("______________________________________________________\n");
+                                       displayline();
                                        logger.info("|  Please enter the id of the house to cancel it :)  |\n");
-                                       logger.info("|____________________________________________________|\n");
+                                       displayed();
                                        int id = in.nextInt();
                                        RequestToAddHouseDB.cancelRequest(id);
                                        RequestToAddHouseDB.displayHouses(RequestToAddHouseDB.getHouses());
-                                       logger.info("______________________________________________________\n");
+                                       displayline();
                                        logger.info("| The cancel Done!                                   |\n");
-                                       logger.info("|____________________________________________________|\n");
+                                       displayed();
                                    }
                                    //Add
                                    else if (optionadmin == 2) {
@@ -103,17 +102,17 @@ public class Main {
                                            HouseDB.addHouse(h);
                                        }
                                        RequestToAddHouseDB.clearTheRequestList();
-                                       logger.info("______________________________________________________\n");
+                                       displayline();
                                        logger.info("|            The houses added Successfully! :)       |\n");
-                                       logger.info("|____________________________________________________|\n");
+                                       displayed();
                                    }
                                    else if (optionadmin == 3) {
                                        break;
                                    }
                                    else {
-                                       logger.info("____________________________________________________\n");
+                                       displayline();
                                     logger.warning("|             Please Enter valid number :)         |\n");
-                                       logger.info("|__________________________________________________|\n");
+                                       displayed();
                                    }
                                }
                            }
@@ -137,9 +136,9 @@ public class Main {
                                 logger.info(" ----------------------------------------- \n");
                                 option = in.nextInt();
                                 if (option == 1) {
-                                    logger.info("______________________________________________________\n");
+                                    displayline();
                                     logger.info("|Please Enter the ID of the House you want to Delete.|\n");
-                                    logger.info("|____________________________________________________|\n");
+                                    displayed();
 
                                     int id = in.nextInt();
                                     HouseDB.deleteHouse(id);
@@ -238,13 +237,10 @@ public class Main {
                                 newApartment.setArea(in.nextInt());
 
                                 logger.info("--the Number of Room :");
-                                newApartment.setNumOfRoom(in.nextInt());
+                                newApartment.setNum_of_room(in.nextInt());
 
                                 logger.info("--the Number of Bathrooms :");
-                                newApartment.setNumOfBathrooms(in.nextInt());
-
-                                logger.info("--the Number of Bedrooms :");
-                                newApartment.setNumOfBathrooms(in.nextInt());
+                                newApartment.setNum_of_bathrooms(in.nextInt());
 
                                 logger.info("--the Rent :");
                                 newApartment.setRent(in.nextInt());
@@ -267,9 +263,9 @@ public class Main {
                                 apartments.add(newApartment);
                                 totalApartments--;
                             }
-                             logger.info("______________________________________________________\n");
+                             displayline();
                              logger.info("| Please wait until the admin accept your house :)   |\n");
-                             logger.info("|____________________________________________________|\n");
+                             displayed();
                             newHouse.setApartments(apartments);
                             RequestToAddHouseDB.addHouse(newHouse);
                         }
@@ -283,7 +279,7 @@ public class Main {
                              if (ownerHouses.isEmpty()) {
                                  logger.info("You have no houses!\n");
                              } else {
-                                 logger.info("--------"+email+"'s "+ "Houses --------\n ");
+                                 logger.info(String.format("--------%s's Houses --------\n ", owner.getName()));
                                  for(House h : HouseDB.getHouses()) {
                                      if (h.getOwner().getEmail().equals(owner.getEmail())) {
                                          HouseDB.displayHouse(h);
@@ -313,13 +309,13 @@ public class Main {
                                                  break;
                                              }
                                          }
-                                         logger.info("__________________________________________________________\n");
+                                        display();
                                          if (isHouseDeleted) {
                                       logger.warning("|   Delete Done                                          |\n");
                                          } else {
                                       logger.warning("|   House not found                                      |\n");
                                          }
-                                         logger.info("|________________________________________________________|\n");
+                                         displaying();
 
 // Retrieve the updated list of houses owned by the specific owner
                                          List<House> ownerHouses2 = new ArrayList<>();
@@ -334,9 +330,9 @@ public class Main {
                                          }
                                      }
                                          else if (innerOption == 2) {
-                                         logger.info("__________________________________________________________\n");
+                                         display();
                                       logger.warning("|Please Enter the Id of the House you want to update:)   |\n");
-                                         logger.info("|________________________________________________________|\n");
+                                         displaying();
 
                                          int houseId = in.nextInt();
                                          House selectedHouse = null;
@@ -357,6 +353,7 @@ public class Main {
                                                  logger.info("|3- Change tenant number                    |\n");
                                                  logger.info("|4- Cancel                                  |\n");
                                                  logger.info(" --------------------------------------------\n");
+
                                                  option = in.nextInt();
                                                  if (option == 1) {
                                                      logger.info("Please enter the Apartment ID you want to update: ");
@@ -376,7 +373,8 @@ public class Main {
                                                          selectedApartment.setRent(newRent);
                                                          HouseDB.displayHouse(selectedHouse);
                                                      } else {
-                                                         logger.info("Apartment with ID " + apartmentId + " not found in the house with ID " + houseId + "!");
+                                                         logger.info(String.format("Apartment with ID %d not found in the house with ID %d!", apartmentId, houseId));
+
                                                      }
 
                                                  } else if (option == 2) {
@@ -404,7 +402,7 @@ public class Main {
                                                          selectedHouseforupdate.setServices(services);
                                                          HouseDB.displayHouse(selectedHouse);
                                                      } else {
-                                                         logger.info("House with ID " + houseid + " not found or doesn't belong to you!");
+                                                         logger.info(String.format("House with ID %s not found or doesn't belong to you!", houseid));
                                                      }
                                                  } else if (option == 3) {
                                                      logger.info("Please enter the Apartment ID you want to update: ");
@@ -424,17 +422,18 @@ public class Main {
                                                          selectedApartment.setNumOfTenant(numOfTenants);
                                                          HouseDB.displayHouse(selectedHouse);
                                                      } else {
-                                                         logger.info("Apartment with ID " + apartmentId + " not found in the house with ID " + houseId + "!");
+                                                         logger.info(String.format("Apartment with ID %d not found in the house with ID %d!", apartmentId, houseId));
                                                      }
                                                  } else if (option == 4) {
                                                      break;
                                                  }
                                              }
                                          }
-                                     } else if(innerOption == 3) {
-                                         logger.info("__________________________________________________________\n");
+                                     }
+                                         else if(innerOption == 3) {
+                                         display();
                                          logger.warning("|Please Enter the Id of the House you want to show       |\n");
-                                         logger.info("|________________________________________________________|\n");
+                                        displaying();
                                          int id = in.nextInt();
                                          for(House h : HouseDB.getHouses()) {
                                              if(h.getId() == id){
@@ -521,14 +520,14 @@ public class Main {
 
                                 int tenantOption1 = in.nextInt();
                                 if(tenantOption1 == 1){
-                                    logger.info("__________________________________________________________\n");
+                                    display();
                                  logger.warning("|Please Enter the Id of the House you want to show       |\n");
-                                    logger.info("|________________________________________________________|\n");
+                                   displaying();
                                     int id = in.nextInt();
 
-                                    logger.info("__________________________________________________________\n");
+                                    display();
                                  logger.warning("|Please Enter the Id of the Apartment you want to show   |\n");
-                                    logger.info("|________________________________________________________|\n");
+                                    displaying();
                                     int number = in.nextInt();
                                     for(House h : HouseDB.getHouses()){
                                         if(h.getId() == id){
@@ -541,13 +540,14 @@ public class Main {
                                     }
                                 }
                                 else if(tenantOption1 == 2){
-                                    logger.info("__________________________________________________________\n");
+                                    display();
                                  logger.warning("|Please Enter the Id of the House you want to Rent       |\n");
-                                    logger.info("|________________________________________________________|\n");
+                                    displaying();
                                      HouseRentId = in.nextInt();
-                                    logger.info("__________________________________________________________\n");
+                                    display();
                                  logger.warning("|Please Enter the Id of the Apartment you want to Rent   |\n");
-                                    logger.info("|________________________________________________________|\n");
+                                    displaying();
+
                                     int number = in.nextInt();
                                     for(House h : HouseDB.getHouses()){
                                         if(h.getId() == HouseRentId){
@@ -591,11 +591,13 @@ public class Main {
                          logger.warning("|Thank you to sale your furniture's....                            |\n");
                             logger.info("|__________________________________________________________________|\n");
 
+
                         }else if(tenantOption == 4){
                             if(HouseRentId ==-1){
                                 logger.info("____________________________________________________________________\n");
-                                logger.warning("|You haven't rented a house yet....                            |\n");
+                             logger.warning("|You haven't rented a house yet....                                |\n");
                                 logger.info("|__________________________________________________________________|\n");
+
 
                             }else {
                                 for (House h : HouseDB.getHouses()) {
@@ -616,11 +618,10 @@ public class Main {
                             logger.info("|     id          |"+"    Name     |"+"    Phone    " +
                                     " |"+"       Age       |"+"    University Major     |"+"     Has furniture     |\n");
                               TenantDB.displayTenant(tenant);
-                            logger.info("__________________________________________________________\n");
+                            display();
                          logger.warning("|1- Back                                                 |\n");
                          logger.warning("|2- If you want to Log out                               |\n");
-                            logger.info("|________________________________________________________|\n");
-
+                            displaying();
                             int logout = in.nextInt();
                             if(logout == 2){
                                 tenant = null;
@@ -629,9 +630,9 @@ public class Main {
                         } else if (tenantOption == 6) {
                             break;
                         }else{
-                            logger.info("__________________________________________________________\n");
+                            display();
                             logger.warning("|Please enter a valid number!!                        |\n");
-                            logger.info("|________________________________________________________|\n");
+                            displaying();
                         }
                     }
                 }else {
@@ -643,9 +644,23 @@ public class Main {
                 logger.info("____________________________________________________\n");
                 logger.warning("|             Please Enter valid number :)         |\n");
                 logger.info("|__________________________________________________|\n");
+
                 menu();
 
             }
         } //menu
     }
+    public static void displaying(){
+        logger.info("|________________________________________________________|\n");
+    }
+    public static void display(){
+        logger.info("__________________________________________________________\n");
+    }
+    public static void displayed(){
+        logger.info("|____________________________________________________|\n");
+    }
+    public static void displayline(){
+        logger.info("|____________________________________________________|\n");
+    }
+
 }
