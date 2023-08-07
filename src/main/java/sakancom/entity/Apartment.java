@@ -143,14 +143,14 @@ public class Apartment {
         String balconyFlag = balcony ? "has a balcony" : "doesn't have a balcony";
         String isAvailableFlag = isAvailable ? "is available to rent" : "is not available to rent";
 
-        logger.info(String.format("%s%d\n%d Room(s)\n%d Bathroom(s)\n%.2f sq. ft.\nRent: $%.2f per month\n%s\n%d Number of tenant(s)\n%s\nRent Payment Date: %s\nPhoto: %s\nFloor Number: %d\n",
+        logger.info(String.format("%s%d%n%d Room(s)%n%d Bathroom(s)%n%.2f sq. ft.%nRent: $%.2f per month%n%s%n%d Number of tenant(s)%n%s%nRent Payment Date: %s%nPhoto: %s%nFloor Number: %d%n",
                 word, number, numofroom, numofbathrooms, area, rent, balconyFlag, numOfTenant, isAvailableFlag, rentPaymentDate, photo, floorNum));
 
         if (!tenant.isEmpty()) {
-            logger.info("---------------------------------The Tenant information--------------------------------\n");
+            logger.info("---------------------------------The Tenant information--------------------------------%n");
             for (Tenant t : tenant) {
-                logger.info("Tenant: " + t.getName() + "\nContact: " + t.getPhone() + "\nAddress: " +
-                        t.getAddress() + "\nUniversity Major: " + t.getUniversityMajors() + "\nAge: " + t.getAge() + "\n");
+                logger.info("Tenant: " + t.getName() + "%nContact: " + t.getPhone() + "%nAddress: " +
+                        t.getAddress() + "%nUniversity Major: " + t.getUniversityMajors() + "%nAge: " + t.getAge() + "%n");
             }
         }
     }
@@ -159,9 +159,9 @@ public class Apartment {
         if (numOfTenant > tenant.size()) {
             tenant.add(t);
             isAvailableToRent();
-            logger.info(word + number + "\nhas been rented to " + t.getName() + "\n");
+            logger.info(word + number + "%nhas been rented to " + t.getName() + "%n");
         } else {
-            logger.info(word + number + "\nis already rented\n");
+            logger.info(word + number + "%nis already rented%n");
         }
     }
 }
