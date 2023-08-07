@@ -108,7 +108,4 @@ public class House extends LoginToMyAppAsOwner {
       this.apartments = apartments;
    }
 
-   public List<Apartment> getApartment() {
-      return apartments;
-   }
 }
