@@ -26,24 +26,7 @@ public class Apartment {
 
     }
 
-    public Apartment(int id, int number, int area, int numOfRoom, int numOfBathrooms, double rent,
-                     int numOfTenant, boolean balcony, List<Tenant> tenant, boolean isAvailable,
-                     String rentPaymentDate, String photo, int floorNum) {
-        this.id = id;
-        this.number = number;
-        this.area = area;
-        this.numofroom = numOfRoom;
-        this.numofbathrooms = numOfBathrooms;
-        this.rent = rent;
-        this.numOfTenant = numOfTenant;
-        this.balcony = balcony;
-        this.tenant = tenant;
-        this.isAvailable = isAvailable;
-        this.rentPaymentDate = rentPaymentDate;
-        this.photo = photo;
-        this.floorNum = floorNum;
-    }
-    String apartment = "Apartment ";
+    String word = "Apartment ";
 
     public int getId() {
         return id;
@@ -160,7 +143,7 @@ public class Apartment {
         String balconyFlag = balcony ? "has a balcony" : "doesn't have a balcony";
         String isAvailableFlag = isAvailable ? "is available to rent" : "is not available to rent";
 
-        logger.info(apartment + number + "\n" + numofroom + " Room(s)\n" + numofbathrooms + " Bathroom(s)\n"
+        logger.info(word + number + "\n" + numofroom + " Room(s)\n" + numofbathrooms + " Bathroom(s)\n"
                 + area + " sq. ft.\nRent: $" + rent + " per month\n" + balconyFlag + "\n" + numOfTenant + " Number of tenant(s)\n" +
                 isAvailableFlag + "\nRent Payment Date: " + rentPaymentDate + "\n" + "Photo: " + photo + "\n" + "Floor Number: " + floorNum + "\n");
 
@@ -177,9 +160,9 @@ public class Apartment {
         if (numOfTenant > tenant.size()) {
             tenant.add(t);
             isAvailableToRent();
-            logger.info(apartment + number + "\nhas been rented to " + t.getName() + "\n");
+            logger.info(word + number + "\nhas been rented to " + t.getName() + "\n");
         } else {
-            logger.info(apartment + number + "\nis already rented\n");
+            logger.info(word + number + "\nis already rented\n");
         }
     }
 }
