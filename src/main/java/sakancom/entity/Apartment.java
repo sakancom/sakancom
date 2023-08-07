@@ -23,7 +23,7 @@ public class Apartment {
     private int floorNum;
 
     public Apartment() {
-
+     // constructor without parameter
     }
 
     String word = "Apartment ";
