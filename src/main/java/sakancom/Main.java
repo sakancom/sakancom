@@ -16,7 +16,7 @@ public class Main {
     static Apartment newApartment = new Apartment();
 
     public static void menu(){
-            logger.info("____________________________________________________\n");
+            displayupline();
             logger.info("|       Welcome to Sakantcom Services System :)     |\n");
             logger.info("| 1-If you want to login as an admin                |\n");
             logger.info("| 2-If you want to login as an owner                |\n");
@@ -34,16 +34,16 @@ public class Main {
                 menu();
                 option = in.nextInt();
             } catch (InputMismatchException e) {
-                logger.info("____________________________________________________\n");
+              displayupline();
              logger.warning("|             Please Enter valid number :)         |\n");
-                logger.info("|__________________________________________________|\n");
+                displaydownline();
                 in.nextLine();
                 continue;
             }
 ////////////////////////////////////////////////////////////Admin////////////////////////////////////////////
-            logger.info("____________________________________________________\n");
+            displayupline();
          logger.warning("|             WELCOME TO LOGIN PAGE                |\n");
-            logger.info("|__________________________________________________|\n");
+         displaydownline();
 
             logger.info("Enter your email:");
             email = in.next();
@@ -64,25 +64,25 @@ public class Main {
                     }
                     logger.info("WELCOME Admin "+ admin.getEmail()+ "\n");
                     while (true) {
-                        logger.info("____________________________________________________\n");
+                        displayupline();
                         logger.info("|       Welcome to Admin page :)                   |\n");
                         logger.info("| 1- Requests                                      |\n");
                         logger.info("| 2- Owners                                        |\n");
                         logger.info("| 3- Tenant                                        |\n");
                         logger.info("| 4- Houses                                        |\n");
                         logger.info("| 5- Log Out                                       |\n");
-                        logger.info("|__________________________________________________|\n");
+                        displaydownline();
                         int optionadmin = in.nextInt();
                      //////////Request/////////
                            if(optionadmin == 1) {
                                RequestToAddHouseDB.displayHouses(RequestToAddHouseDB.getHouses());
                                while (true) {
-                                   logger.info("____________________________________________________\n");
+                                   displayupline();
                                    logger.info("|       Welcome to Requests Options :)             |\n");
                                    logger.info("| 1- Cancel Request                                |\n");
                                    logger.info("| 2- Add Requests                                  |\n");
                                    logger.info("| 3- Back                                          |\n");
-                                   logger.info("|__________________________________________________|\n");
+                                   displaydownline();
                                    optionadmin = in.nextInt();
                                    //cancel
                                    if (optionadmin == 1) {
@@ -182,13 +182,13 @@ public class Main {
                     }
                     logger.info("Welcome Owner "+ owner.getName() +"\n");
                     while (true) {
-                        logger.info("____________________________________________________\n");
+                        displayupline();
                         logger.info("|              Welcome to Owners Options           |\n");
                         logger.info("| 1- Add House                                     |\n");
                         logger.info("| 2- My Houses                                     |\n");
                         logger.info("| 3- My Profile                                    |\n");
                         logger.info("| 4- log out                                       |\n");
-                        logger.info("|__________________________________________________|\n");
+                        displaydownline();
                         int optionowner = in.nextInt();
                          if(optionowner == 1){
                             House newHouse = new House();
@@ -472,9 +472,9 @@ public class Main {
 
                         }
                         else {
-                            logger.info("____________________________________________________\n");
+                            displayupline();
                          logger.warning("|             Please Enter valid number :)         |\n");
-                            logger.info("|__________________________________________________|\n");
+                            displaydownline();
                         }
                     }
                 }
@@ -577,7 +577,7 @@ public class Main {
                             }
                         } else if(tenantOption == 3){
                             List<String > furnitures = new ArrayList<>();
-                            logger.info("____________________________________________________________________\n");
+                            displayuptallline();
                          logger.warning("|Please Enter the numbers of Furniture you want to add for sale   |\n");
                             logger.info("|__________________________________________________________________|\n");
                             int numOfFurniture = in.nextInt();
@@ -587,14 +587,14 @@ public class Main {
                                 numOfFurniture--;
                             }
                             tenant.setFurniture(furnitures);
-                            logger.info("____________________________________________________________________\n");
+                            displayuptallline();
                          logger.warning("|Thank you to sale your furniture's....                            |\n");
                             logger.info("|__________________________________________________________________|\n");
 
 
                         }else if(tenantOption == 4){
                             if(houserentid ==-1){
-                                logger.info("____________________________________________________________________\n");
+                                displayuptallline();
                              logger.warning("|You haven't rented a house yet....                                |\n");
                                 logger.info("|__________________________________________________________________|\n");
 
@@ -641,9 +641,11 @@ public class Main {
             }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else {
-                logger.info("____________________________________________________\n");
+               displayupline();
                 logger.warning("|             Please Enter valid number :)         |\n");
                 logger.info("|__________________________________________________|\n");
+                displaydownline();
+
 
                 menu();
 
@@ -662,5 +664,10 @@ public class Main {
     public static void displayline(){
         logger.info(" ____________________________________________________ \n");
     }
+    public static void displayupline(){logger.info("____________________________________________________\n");}
+  public static void displaydownline(){logger.info("|__________________________________________________|\n");}
+    public static void displayuptallline(){logger.info("____________________________________________________________________\n");}
+    public static void displaydowntallline(){logger.info("|____________________________________________________________________|\n");}
+
 
 }

@@ -23,6 +23,7 @@ public class Apartment {
     private int floorNum;
 
     public Apartment() {
+
     }
 
     public Apartment(int id, int number, int area, int numOfRoom, int numOfBathrooms, double rent,
@@ -42,6 +43,7 @@ public class Apartment {
         this.photo = photo;
         this.floorNum = floorNum;
     }
+    String apartment = "Apartment ";
 
     public int getId() {
         return id;
@@ -154,10 +156,11 @@ public class Apartment {
     }
 
     public void displayInfo() {
+
         String balconyFlag = balcony ? "has a balcony" : "doesn't have a balcony";
         String isAvailableFlag = isAvailable ? "is available to rent" : "is not available to rent";
 
-        logger.info("Apartment " + number + "\n" + numofroom + " Room(s)\n" + numofbathrooms + " Bathroom(s)\n"
+        logger.info(apartment + number + "\n" + numofroom + " Room(s)\n" + numofbathrooms + " Bathroom(s)\n"
                 + area + " sq. ft.\nRent: $" + rent + " per month\n" + balconyFlag + "\n" + numOfTenant + " Number of tenant(s)\n" +
                 isAvailableFlag + "\nRent Payment Date: " + rentPaymentDate + "\n" + "Photo: " + photo + "\n" + "Floor Number: " + floorNum + "\n");
 
@@ -174,9 +177,9 @@ public class Apartment {
         if (numOfTenant > tenant.size()) {
             tenant.add(t);
             isAvailableToRent();
-            logger.info("Apartment " + number + "\nhas been rented to " + t.getName() + "\n");
+            logger.info(apartment + number + "\nhas been rented to " + t.getName() + "\n");
         } else {
-            logger.info("Apartment " + number + "\nis already rented\n");
+            logger.info(apartment + number + "\nis already rented\n");
         }
     }
 }
