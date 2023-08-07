@@ -35,7 +35,7 @@ public class Main {
                 option = in.nextInt();
             } catch (InputMismatchException e) {
               displayupline();
-             logger.warning("|             Please Enter valid number :)         |\n");
+             displayEnterValidNumber();
                 displaydownline();
                 in.nextLine();
                 continue;
@@ -111,7 +111,7 @@ public class Main {
                                    }
                                    else {
                                        displayline();
-                                    logger.warning("|             Please Enter valid number :)         |\n");
+                                       displayEnterValidNumber();
                                        displayed();
                                    }
                                }
@@ -148,7 +148,7 @@ public class Main {
                                     break;
                                 } else {
                                     logger.info("______________________________________________________\n");
-                                    logger.warning("|            Please Enter valid number :)             |\n");
+                                    displayEnterValidNumber();
                                     logger.info("|_____________________________________________________|\n");
 
                                 }
@@ -160,7 +160,7 @@ public class Main {
                         }
                         else {
                             logger.info("______________________________________________________\n");
-                            logger.warning("|            Please Enter valid number :)             |\n" );
+                               displayEnterValidNumber();
                             logger.info("|_____________________________________________________|\n");
                         }
                     }
@@ -297,7 +297,7 @@ public class Main {
                                      if (innerOption == 1) {
                                          logger.info("______________________________________________________________________\n");
                                       logger.warning("|Please Enter the House ID of the House you want to delete :)        |\n");
-                                         logger.info("|____________________________________________________________________|\n");
+                                         displaydowntallline();
                                          int housemaid = in.nextInt();
                                          boolean isHouseDeleted = false;
                                          Iterator<House> iterator = HouseDB.getHouses().iterator();
@@ -473,7 +473,7 @@ public class Main {
                         }
                         else {
                             displayupline();
-                         logger.warning("|             Please Enter valid number :)         |\n");
+                             displayEnterValidNumber();
                             displaydownline();
                         }
                     }
@@ -642,7 +642,7 @@ public class Main {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else {
                displayupline();
-                logger.warning("|             Please Enter valid number :)         |\n");
+                displayEnterValidNumber();
                 logger.info("|__________________________________________________|\n");
                 displaydownline();
 
@@ -665,9 +665,10 @@ public class Main {
         logger.info(" ____________________________________________________ \n");
     }
     public static void displayupline(){logger.info("____________________________________________________\n");}
-  public static void displaydownline(){logger.info("|__________________________________________________|\n");}
+   public static void displaydownline(){logger.info("|__________________________________________________|\n");}
     public static void displayuptallline(){logger.info("____________________________________________________________________\n");}
     public static void displaydowntallline(){logger.info("|____________________________________________________________________|\n");}
+    public static void displayEnterValidNumber(){ logger.warning("|             Please Enter valid number :)         |\n");}
 
 
 }
