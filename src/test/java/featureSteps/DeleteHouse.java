@@ -36,8 +36,7 @@ public class DeleteHouse {
     @Then("delete done")
     public void delete_done() {
       HouseDB.deleteHouse(0);
-        assertEquals(0, HouseDB.getHouses().size());
-    }
+        assertEquals(0, HouseDB.getHouses().size());}
 
 
 
@@ -48,11 +47,7 @@ public class DeleteHouse {
     @When("the admin or owner want to delete it")
     public void the_admin_or_owner_want_to_delete_it() {
         House house = null;
-        for(House h : HouseDB.getHouses()){
-            if(h.getId() == id){
-                house = h;
-            }
-        }
+        for(House h : HouseDB.getHouses()){  if(h.getId() == id){house = h;}}
         assertNull(house);
     }
     @Then("message appear to tell the them that is no house with this id")

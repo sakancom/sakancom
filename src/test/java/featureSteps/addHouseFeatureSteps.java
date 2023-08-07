@@ -45,17 +45,14 @@ public class addHouseFeatureSteps {
          HouseDB.addHouse(h);
      }
         clearTheRequestList();
-
     }
     @Then("the requests list will be empty")
     public void theRequestsListWillBeEmpty() {
-      //  clearTheRequestList();
         assertEquals(0, getHouses().size());
     }
     @Given("request list dosn't have houses to rent")
     public void requestListDosnTHaveHousesToRent() {
         assertEquals(0, getHouses().size());
-
     }
     @Then("the message appear to tell the admin that request list empty")
     public void theMessageAppearToTellTheAdminThatRequestListEmpty() {
