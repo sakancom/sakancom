@@ -200,10 +200,10 @@ public class Main {
 
                             logger.info("--the location :");
                             String location = in.next();
-                            newHouse.setLocation(location);
 
                             logger.info("--the number of services :");
                             int numOfServices = in.nextInt();
+                             newHouse.setLocation(location);
 
                             List<String > services = new ArrayList<>();
                             logger.info("--the  services :");
@@ -279,7 +279,8 @@ public class Main {
                              if (ownerHouses.isEmpty()) {
                                  logger.info("You have no houses!\n");
                              } else {
-                                 logger.info(String.format("--------%s's Houses --------%n", owner.getName()));
+                                 String valueOf = String.format("--------%s's Houses --------%n");
+                                 logger.info(valueOf + owner.getName());
                                  for(House h : HouseDB.getHouses()) {
                                      if (h.getOwner().getEmail().equals(owner.getEmail())) {
                                          HouseDB.displayHouse(h);
