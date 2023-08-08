@@ -42,8 +42,9 @@ public class Tenant {
     public void setFurniture(List<String> furniture) {
         if(furniture.isEmpty()){
             this.furniture = furniture;
-        }else
+        }else{
         setHasFurnitureWindow(true);
+        }
     }
 
 
