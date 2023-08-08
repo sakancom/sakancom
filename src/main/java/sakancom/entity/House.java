@@ -101,11 +101,10 @@ public class House extends LoginToMyAppAsOwner {
    }
 
    public List<Apartment> getApartments() {
+
       return apartments;
    }
-   public List<Apartment> getApartment() {
-      return apartments;
-   }
+
 
    public void setApartments(ArrayList<Apartment> apartments) {
       this.apartments = apartments;

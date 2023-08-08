@@ -102,6 +102,7 @@ public class Apartment {
     }
 
     public List<Tenant> getTenant() {
+
         return tenant;
     }
 

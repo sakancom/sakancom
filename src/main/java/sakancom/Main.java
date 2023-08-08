@@ -361,7 +361,7 @@ public class Main {
                                                      int apartmentId = in.nextInt();
                                                      Apartment selectedApartment = null;
 
-                                                     for (Apartment apartment : selectedHouse.getApartment()) {
+                                                     for (Apartment apartment : selectedHouse.getApartments()) {
                                                          if (apartment.getNumber() == apartmentId) {
                                                              selectedApartment = apartment;
                                                              break;
@@ -410,7 +410,7 @@ public class Main {
                                                      int apartmentId = in.nextInt();
                                                      Apartment selectedApartment = null;
 
-                                                     for (Apartment apartment : selectedHouse.getApartment()) {
+                                                     for (Apartment apartment : selectedHouse.getApartments()) {
                                                          if (apartment.getNumber() == apartmentId) {
                                                              selectedApartment = apartment;
                                                              break;
