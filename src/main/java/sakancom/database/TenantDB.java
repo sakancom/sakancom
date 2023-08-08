@@ -24,6 +24,7 @@ public class TenantDB {
         tenant.setUniversityMajors("sport");
         tenant.setHasFurnitureWindow(false);
         tenant.setFurniture(new ArrayList<>());
+        tenants.add(tenant);
     }
     public static void addTenant(Tenant tenant) {
         tenants.add(tenant);

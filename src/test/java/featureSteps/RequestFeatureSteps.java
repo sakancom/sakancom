@@ -27,8 +27,15 @@ public class RequestFeatureSteps {
     }
     @Given("there is a house with id {int},location {string}, services null , owner null , totalApartments {int} ,apartments null , photo {string} and numOfFloor {int}")
     public void there_is_a_house_with_id_location_services_null_owner_null_total_apartments_apartments_null_photo_and_num_of_floor(int id, String location, List<String> services, HousingOwners owner, int totalApartments, ArrayList<Apartment> apartments, String photo , int numOfFloor) {
-        house = new House( id, location,  services, owner,  totalApartments,  apartments, photo , numOfFloor);
-    }
+        house = new House();
+        house.setId(id);
+        house.setLocation(location);
+        house.setServices(services);
+        house.setOwner(owner);
+        house.setTotalApartments(totalApartments);
+        house.setApartments(apartments);
+        house.setPhoto(photo);
+        house.setNumOfFloor(numOfFloor);    }
     @Then("the House will be saved in the request list")
     public void the_house_will_be_saved_in_the_request_list() {
         RequestToAddHouseDB.addHouse(house);
@@ -38,7 +45,14 @@ public class RequestFeatureSteps {
 
     @And("there is a house with id {int}, location {string}, services {string}, owner {string}, totalApartments {int}, apartments {string}, photo {string} and numOfFloor {int}")
     public void thereIsAHouseWithIdLocationServicesOwnerTotalApartmentsApartmentsPhotoAndNumOfFloor(int id, String location, String services, String owner, int totalApartments, String apartments, String photo , int numOfFloor) {
-        house = new House( id, location,  null, null,  totalApartments,  null, photo , numOfFloor);
-
+        house = new House();
+        house.setId(id);
+        house.setLocation(location);
+        house.setServices(null);
+        house.setOwner(null);
+        house.setTotalApartments(totalApartments);
+        house.setApartments(null);
+        house.setPhoto(photo);
+        house.setNumOfFloor(numOfFloor);
     }
 }
