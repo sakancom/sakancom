@@ -279,7 +279,7 @@ public class Main {
                              if (ownerHouses.isEmpty()) {
                                  logger.info("You have no houses!\n");
                              } else {
-                                 String valueOf = String.format("--------%s's Houses --------%n");
+                                 String valueOf = ("--------'s Houses --------%n");
                                  logger.info(valueOf + owner.getName());
                                  for(House h : HouseDB.getHouses()) {
                                      if (h.getOwner().getEmail().equals(owner.getEmail())) {
