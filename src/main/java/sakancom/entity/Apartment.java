@@ -159,9 +159,9 @@ public class Apartment {
         if (numOfTenant > tenant.size()) {
             tenant.add(t);
             isAvailableToRent();
-            logger.info(String.format("%s %d%nhas been rented to %s%n", word, number, t.getName()));
+            logger.info(word + number + "%nhas been rented to " + t.getName() + "%n");
         } else {
-            logger.info(String.format("%s %d%nis already rented%n", word, number));
+            logger.info(word + number + "%nis already rented%n");
         }
     }
 }
