@@ -105,7 +105,7 @@ public class Apartment {
         return tenant;
     }
 
-    public void setTenant(ArrayList<Tenant> tenant) {
+    public void setTenant(List<Tenant> tenant) {
         this.tenant = tenant;
     }
 
