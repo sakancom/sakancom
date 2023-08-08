@@ -143,7 +143,8 @@ public class Apartment {
         String balconyFlag = balcony ? "has a balcony" : "doesn't have a balcony";
         String isAvailableFlag = isAvailable ? "is available to rent" : "is not available to rent";
 
-        logger.info(String.format("%s%d%n%d Room(s)%n%d Bathroom(s)%n%.2f sq. ft.%nRent: $%.2f per month%n%s%n%d Number of tenant(s)%n%s%nRent Payment Date: %s%nPhoto: %s%nFloor Number: %d%n",
+        logger.info(String.format("%s%d%n%d Room(s)%n%d Bathroom(s)%n%.2f sq. ft.%nRent: $%.2f per month%n%s%n%d " +
+                        "Number of tenant(s)%n%s%nRent Payment Date: %s%nPhoto: %s%nFloor Number: %d%n",
                 word, number, numofroom, numofbathrooms, area, rent, balconyFlag, numOfTenant, isAvailableFlag, rentPaymentDate, photo, floorNum));
 
         if (!tenant.isEmpty()) {
