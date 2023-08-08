@@ -1,9 +1,5 @@
 package sakancom.entity;
-
-import sakancom.LoggerUtility;
-
 import java.util.List;
-import java.util.logging.Logger;
 
 public class Tenant {
     private String password ;

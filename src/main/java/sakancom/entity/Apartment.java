@@ -2,7 +2,6 @@ package sakancom.entity;
 
 import sakancom.LoggerUtility;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 

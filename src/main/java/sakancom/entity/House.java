@@ -2,10 +2,8 @@ package sakancom.entity;
 
 import sakancom.serveses.LoginToMyAppAsOwner;
 
-import java.util.ArrayList;
 import java.util.List;
 
-// comment for test
 
 
 public class House extends LoginToMyAppAsOwner {
@@ -20,20 +18,6 @@ public class House extends LoginToMyAppAsOwner {
    private int numOfFloor;
    public House() {
 
-   }
-
-   public House(int id, String location, List<String> services, HousingOwners owner, int totalApartments,
-                List<Apartment> apartments, String photo, int numOfFloor) {
-
-      this.id = id;
-      this.location = location;
-      this.services = services;
-      this.owner = owner;
-
-      this.totalApartments = totalApartments;
-      this.apartments = apartments;
-      this.photo = photo;
-      this.numOfFloor = numOfFloor;
    }
 
    public int getNumOfFloor() {
@@ -106,7 +90,7 @@ public class House extends LoginToMyAppAsOwner {
    }
 
 
-   public void setApartments(ArrayList<Apartment> apartments) {
+   public void setApartments(List<Apartment> apartments) {
       this.apartments = apartments;
    }
 
