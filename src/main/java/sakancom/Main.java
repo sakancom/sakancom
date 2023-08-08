@@ -625,7 +625,6 @@ public class Main {
                             displaying();
                             int logout = in.nextInt();
                             if(logout == 2){
-                                tenant = null;
                                 break;
                             }
                         } else if (tenantOption == 6) {
