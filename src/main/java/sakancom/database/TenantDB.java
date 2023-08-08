@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class TenantDB {
     private static final Logger logger = LoggerUtility.getLogger();
-    static List<Tenant> tenants= new ArrayList<Tenant>();
+    static List<Tenant> tenants= new ArrayList<>();
     private TenantDB() {
 
         throw new IllegalStateException("Utility class");

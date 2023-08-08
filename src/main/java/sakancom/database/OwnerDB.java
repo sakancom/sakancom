@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class OwnerDB {
     private static Logger logger = LoggerUtility.getLogger();
 
-    static List <HousingOwners> owners= new ArrayList<HousingOwners>();
+    static List <HousingOwners> owners= new ArrayList<>();
     static HousingOwners housingOwners = new HousingOwners();
     private OwnerDB() {
         throw new IllegalStateException("Utility class");

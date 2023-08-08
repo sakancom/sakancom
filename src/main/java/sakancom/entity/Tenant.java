@@ -16,6 +16,7 @@ public class Tenant {
 
 
     public Tenant() {
+        //construct without parameter
     }
 
     public List<String> getFurniture() {

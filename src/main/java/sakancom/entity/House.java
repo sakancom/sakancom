@@ -17,7 +17,7 @@ public class House extends LoginToMyAppAsOwner {
    private String photo;
    private int numOfFloor;
    public House() {
-
+      //construct without parameter
    }
 
    public int getNumOfFloor() {

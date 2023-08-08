@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.*;
 
 public class HouseDB {
-    private static final List <House> houses=new ArrayList<House>();
+    private static final List <House> houses=new ArrayList<>();
     private static final Logger logger = LoggerUtility.getLogger();
 
     private HouseDB() {
