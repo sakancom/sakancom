@@ -3,6 +3,10 @@
     <module name="soft" />
     <extension name="coverage">
       <pattern>
+        <option name="PATTERN" value="sakancom.all.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+      <pattern>
         <option name="PATTERN" value="featureSteps.*" />
         <option name="ENABLED" value="true" />
       </pattern>
@@ -15,10 +19,4 @@
       <option name="Make" enabled="true" />
     </method>
   </configuration>
-
-    <option name="ignoredProducers">
-      <set>
-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
-      </set>
-    </option>
 </component>
