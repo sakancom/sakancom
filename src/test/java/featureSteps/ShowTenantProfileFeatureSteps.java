@@ -36,7 +36,7 @@ public class ShowTenantProfileFeatureSteps {
 
     @And("the tenant has information email {string},password {string}, phone {string},address {string},name {string}, id {int} , age {int} ,universityMajors {string} , hasFurnitureWindow {string},furniture {string});")
     public void theTenantHasInformationEmailPasswordPhoneAddressNameIdAgeUniversityMajorsHasFurnitureWindowFurniture(String email, String password, String phone, String address, String name, int id, int age, String universityMajors , String hasFurnitureWindow,String furniture) {
-        tenant = new Tenant(email,password, phone, address, name, id , age ,universityMajors , true,new ArrayList<>(List.of("wardrobe", " sofa")));
+        tenant = new Tenant(email,password, phone, address, name, id , age ,universityMajors , true,new ArrayList<>());
 
     }
 }

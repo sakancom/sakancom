@@ -580,7 +580,7 @@ public class Main {
                             List<String > furnitures = new ArrayList<>();
                             displayuptallline();
                          logger.warning("|Please Enter the numbers of Furniture you want to add for sale   |\n");
-                            logger.info("|__________________________________________________________________|\n");
+                            displaydowntallline();
                             int numOfFurniture = in.nextInt();
                             while (numOfFurniture > 0){
                                 String furniture = in.next();
