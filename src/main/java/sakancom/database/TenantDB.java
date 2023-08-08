@@ -13,8 +13,17 @@ public class TenantDB {
         throw new IllegalStateException("Utility class");
     }
     static{
-
-        tenants.add(new Tenant("jana@gmail","000", "0655433", "nablus", "jana", 1 , 24 ,"sport" , true,new ArrayList<>()));
+        Tenant tenant = new Tenant();
+        tenant.setEmail("jana@gmail");
+        tenant.setPassword("000");
+        tenant.setPhone("0655433");
+        tenant.setAddress("nablus");
+        tenant.setName("jana");
+        tenant.setId(1);
+        tenant.setAge(24);
+        tenant.setUniversityMajors("sport");
+        tenant.setHasFurnitureWindow(false);
+        tenant.setFurniture(new ArrayList<>());
     }
     public static void addTenant(Tenant tenant) {
         tenants.add(tenant);

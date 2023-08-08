@@ -21,19 +21,6 @@ public class Tenant {
 
     public Tenant() {
     }
-    private static Logger logger = LoggerUtility.getLogger();
-    public Tenant(String email, String password, String phone, String address, String name, int id, int age, String universityMajors , boolean hasFurnitureWindow,List<String> furniture) {
-        this.email = email;
-        this.password=password;
-        this.phone = phone;
-        this.address = address;
-        this.name = name;
-        this.id = id;
-        this.age = age;
-        this.universityMajors = universityMajors;
-        this.hasFurnitureWindow = hasFurnitureWindow;
-        this.furniture = furniture;
-    }
 
     public List<String> getFurniture() {
         return furniture;
@@ -46,8 +33,6 @@ public class Tenant {
         setHasFurnitureWindow(true);
         }
     }
-
-
     public String getPassword() {
         return password;
     }

@@ -1,11 +1,10 @@
 package sakancom.database;
 
 import sakancom.entity.Admin;
-import sakancom.LoggerUtility;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class AdminDB {
     static List <Admin> admins= new ArrayList<Admin>();
